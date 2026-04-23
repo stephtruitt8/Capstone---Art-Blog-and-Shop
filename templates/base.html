@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Art Blog{% endblock %}</title>
+
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    
+    <nav>
+        <a href="{% url 'gallery' %}">画廊</a>
+        <a href="{% url 'shop' %}">Shop</a>
+        <a href="{% url 'blog' %}">Blog</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+
+    <div class="main {% block main_class %}{% endblock %}">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="site-footer">
+    <div class="footer-grid">
+
+        <div class="footer-column">
+            <h3>CONTACT</h3>
+            <p>Barto Arts Studio</p>
+            <p>Cleveland, OH</p>
+            <p>United States</p>
+
+        </div>
+
+        <div class="footer-column small-stuff">
+            <h3>SMALL STUFF</h3>
+            <ul>
+                <li>FAQs</li>
+                <li>Shipping</li>
+                <li>Returns & Cancellations</li>
+                <li>Wholesale</li>
+                <li>Terms of Service</li>
+                <li>Privacy Policy</li>
+            </ul>
+
+                <!-- ⭐ STAR SECTION -->
+            <div class="footer-column stars">
+                
+                <h1>★★★</h1>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>SEND ME NEWS & OFFERS!</h3>
+            <input type="email" placeholder="Email address">
+
+            <div class="socials">
+                <span>f</span>
+                <span>ig</span>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+
+    {% block js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,146 @@
+
+
+/*---Base---*/
+
+nav {
+    background-color: #3b82f6;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+body {
+    margin: 0;
+}
+
+
+/*---Main---*/
+
+
+.main {
+    min-height: 70vh; /* makes sure it fills space */
+
+    background: linear-gradient(
+    to bottom,
+    #3b82f6,
+    #bfdbfe
+    );
+
+    padding: 40px 20px;
+    margin: 0;
+}
+
+
+/*---FooterGrid---*/
+
+.site-footer {
+    background-color: #2f7d32;
+    padding: 70px 60px;
+    margin-top: 80px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    margin: 0;
+}
+
+
+.site-footer {
+    background: #1f5f2e;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+
+    max-width: 900px;
+    width: 0 auto;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    opacity: 0.7;
+}
+
+/* Keep text clean */
+.footer-column h3 {
+    font-family: 'Caveat', cursive;
+    margin-bottom: 15px;
+}
+
+.footer-column p,
+.footer-column li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    padding: 8px;
+    text-align: center;
+}
+
+.footer-column input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+/* Social icons */
+.socials {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.socials span {
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* ⭐ Stars alignment */
+.stars {
+    display: flex;
+    align-items: flex-end; /* pushes stars toward bottom */
+}
+
+.stars img {
+    filter: invert(1);
+    max-width: 120px;
+}
+.small-stuff {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Push stars to bottom */
+.small-stuff .stars {
+    margin-top: auto;
+}

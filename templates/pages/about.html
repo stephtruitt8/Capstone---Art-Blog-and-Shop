@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/pages.css' %}">
+{% endblock %}
+
+{% block title %}About Me{% endblock %}
+
+{% block main_class %}about-main{% endblock %}
+{% block content %}
+
+<section class="about-page">
+
+    <div class="cloud-band">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+    </div>
+
+    <section class="about-hero">
+        <div class="about-card">
+            <h1>About BartoArts</h1>
+            <p>
+                Welcome to BartoArts, a creative space where art and imagination meet.
+                This is a place for expression, experimentation, and building something
+                meaningful through design, storytelling, and visual creativity.
+            </p>
+
+            <p>
+                I wanted this space to feel personal and artistic — something that reflects
+                my love for drawing, creativity, gaming, and exploring new ideas and cultures.
+            </p>
+        </div>
+    </section>
+
+    <div class="grass-section">
+        <div class="hill hill-back"></div>
+        <div class="hill hill-front"></div>
+        <div class="grass-blade blade-1"></div>
+        <div class="grass-blade blade-2"></div>
+        <div class="grass-blade blade-3"></div>
+        <div class="grass-blade blade-4"></div>
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+# create venv:
+py -m venv venv
+
+#activate venv:
+win: venv\Scripts\activate
+
+# install django
+python3 =m pip install django whisenoise pillow django-env
+
+# create
