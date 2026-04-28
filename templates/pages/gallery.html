@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% block css %}{% endblock %}
 
 {% block title %}Gallery{% endblock %}
 
 {% block content %}
-<div class="home">
-    <h1>Gallery coming soon!</h1>
-</div>
+
+<section class="gallery-page">
+    <h1>Gallery</h1>
+    <p>Explore different sides of BartoArts.</p>
+
+    <div class="gallery-categories">
+        <a href="{% url 'illustrations' %}">Illustrations</a>
+        <a href="{% url 'sketches' %}">Sketches</a>
+        <a href="{% url 'story_art' %}">Story Art</a>
+    </div>
+</section>
+
 {% endblock %}

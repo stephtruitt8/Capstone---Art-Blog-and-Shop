@@ -10,6 +10,18 @@ def about_view(request):
 def gallery_view(request):
     return render(request, 'pages/gallery.html')
 
+# // All links to the different galleries will be added here, and the individual gallery pages will be created as well. For now, they will just render the gallery template.
+
+def illustrations_view(request):
+    return render(request, 'pages/illustrations.html')
+
+def sketches_view(request):
+    return render(request, 'pages/sketches.html')
+
+def story_art_view(request):
+    return render(request, 'pages/story_art.html')
+
+
 def shop_view(request):
     return render(request, 'pages/shop.html')
 
@@ -17,23 +29,4 @@ def blog_view(request):
     return render(request, 'pages/blog.html')
 
 def contact_view(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
-
-            # Send email to site owner
-            send_mail(
-                f'New Contact Form Submission from {name}',
-                message,
-                email,
-                [settings.DEFAULT_FROM_EMAIL],
-                fail_silently=False,
-            )
-            return render(request, 'pages/contact_success.html')
-    else:
-        form = ContactForm()
-    
-    return render(request, 'pages/contact.html', {'form': form})
+    return render(request, 'pages/contact.html')

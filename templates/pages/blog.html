@@ -2,13 +2,56 @@
 
 {% load static %}
 {% block css %}
-    
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 {% endblock %}
 
 {% block title %}Blog{% endblock %}
 
 {% block content %}
-<div class="home">
-    <h1>Blog coming soon!</h1>
-</div>
+<section class="blog-page">
+    <div class="blog-hero">
+        <h1>BartoArts Blog</h1>
+        <p>Thoughts, sketches, stories, updates, and creative notes from the studio.</p>
+    </div>
+
+    <div class="blog-grid">
+
+        <article class="blog-card">
+            <img src="{% static 'img/images/project1.png' %}" alt="Blog image">
+            <div class="blog-card-content">
+                <span class="blog-category">Art</span>
+                <h2>Finding Inspiration in Everyday Life</h2>
+                <p>
+                    A small reflection on how ordinary moments can turn into creative ideas.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <img src="{% static 'img/images/project2.png' %}" alt="Blog image">
+            <div class="blog-card-content">
+                <span class="blog-category">Process</span>
+                <h2>Behind the Sketchbook</h2>
+                <p>
+                    A look into the messy, fun, and personal process behind creating art.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <img src="{% static 'img/images/project3.png' %}" alt="Blog image">
+            <div class="blog-card-content">
+                <span class="blog-category">Story</span>
+                <h2>Building a Creative World</h2>
+                <p>
+                    Notes on storytelling, characters, imagination, and building visual worlds.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </article>
+
+    </div>
+</section>
 {% endblock %}

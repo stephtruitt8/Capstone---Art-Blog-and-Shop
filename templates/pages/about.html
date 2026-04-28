@@ -9,8 +9,8 @@
 {% block title %}About Me{% endblock %}
 
 {% block main_class %}about-main{% endblock %}
-{% block content %}
 
+{% block content %}
 <section class="about-page">
 
     <div class="cloud-band">
@@ -20,18 +20,74 @@
     </div>
 
     <section class="about-hero">
-        <div class="about-card">
-            <h1>About BartoArts</h1>
-            <p>
-                Welcome to BartoArts, a creative space where art and imagination meet.
-                This is a place for expression, experimentation, and building something
-                meaningful through design, storytelling, and visual creativity.
-            </p>
 
+        <!-- Intro Card -->
+        <div class="about-card intro-card">
+            <img class="card-image intro-image" src="{% static 'img/images/my-picture.webp' %}" alt="Barto">
+            <h1>Who is Barto?</h1>
             <p>
-                I wanted this space to feel personal and artistic — something that reflects
-                my love for drawing, creativity, gaming, and exploring new ideas and cultures.
+                Barto is a self-taught artist who later went to art college to sharpen his skills and grow in the world of art. He creates comics, illustrations, animations, and more, while also exploring film, storytelling, and ideas that can inspire both younger and older generations.
             </p>
+            <p>
+                He enjoys drawing from life, learning from different cultures, and carrying those experiences back into his own work. This space is meant to feel personal, artistic, and full of the things he loves most: creativity, gaming, storytelling, and exploration.
+            </p>
+        </div>
+
+        <!-- Alternating Sections -->
+        <div class="about-sections">
+
+            <div class="about-card split-card">
+                <div class="split-image">
+                    <img class="card-image" src="{% static 'img/images/project1.png' %}" alt="Artwork 1">
+                </div>
+                <div class="split-text">
+                    <h2>What is Barto’s art about?</h2>
+                    <p>
+                        Barto’s art reflects his passion for storytelling and visual expression. His work explores emotion, identity, culture, and the human experience, blending traditional artistic foundations with a more modern style.
+                    </p>
+                    <p>
+                        Inspired by Japanese culture and many different life experiences, his art can shift between high-action intensity and soft peaceful moments. Sometimes it is loud, dramatic, and full of conflict. Other times it feels calm, open, and reflective.
+                    </p>
+                    <p>
+                        His goal is simple: to make people feel something, whether that is emotion, curiosity, or the inspiration to begin their own creative path.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-card split-card reverse-card">
+                <div class="split-image">
+                    <img class="card-image" src="{% static 'img/images/project2.png' %}" alt="Artwork 2">
+                </div>
+                <div class="split-text">
+                    <h2>Where does Barto study?</h2>
+                    <p>
+                        Barto studied at Cleveland Institute of Art, where he developed his skills and artistic voice, but his education does not stop in the classroom.
+                    </p>
+                    <p>
+                        Inspiration can find him almost anywhere: in a library, a café, a beach, a restaurant abroad, or even on a plane ride. Wherever inspiration blows, Barto is ready to create.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-card split-card">
+                <div class="split-image">
+                    <img class="card-image" src="{% static 'img/images/project3.png' %}" alt="Artwork 3">
+                </div>
+                <div class="split-text">
+                    <h2>The person behind it all</h2>
+                    <p>
+                        Steph Truitt is the artist behind BartoArts. He cares deeply about encouraging creativity in a world that can sometimes feel gray.
+                    </p>
+                    <p>
+                        One quote he comes back to when life feels dim is:
+                    </p>
+                    <p class="quote">
+                        “People’s dreams... have no end!”<br>
+                        <span>— Marshall D. Teach</span>
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -45,5 +101,4 @@
     </div>
 
 </section>
-
 {% endblock %}

@@ -1,0 +1,129 @@
+.contact-page {
+    min-height: 100vh;
+    padding: 100px 20px;
+    background: linear-gradient(to bottom, #dff4ff, #8ccf6c);
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+/* MAIN FORM CARD */
+.contact-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.contact-card h1 {
+    font-size: 2.5rem;
+    color: #166a7a;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    margin-bottom: 25px;
+    color: #2f3e46;
+}
+
+/* FORM */
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-card input,
+.contact-card textarea {
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+    outline: none;
+    border-color: #2f7d32;
+}
+
+/* BUTTON */
+.contact-card button {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 999px;
+    background: #2f7d32;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-card button:hover {
+    background: #1f5f2e;
+}
+
+/* SOCIAL CARD */
+.social-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+    padding: 30px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.social-card h2 {
+    margin-bottom: 20px;
+    color: #166a7a;
+}
+
+/* SOCIAL LINKS */
+.social-link {
+    display: block;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* COLORS */
+.instagram {
+    background: #E1306C;
+}
+
+.behance {
+    background: #1769FF;
+}
+
+.facebook {
+    background: #1877F2;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        padding: 25px;
+    }
+
+    .social-card {
+        padding: 25px;
+    }
+}
