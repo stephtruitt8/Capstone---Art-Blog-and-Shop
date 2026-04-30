@@ -8,3 +8,26 @@ win: venv\Scripts\activate
 python3 =m pip install django whisenoise pillow django-env
 
 # create
+
+
+class ProductList(ListView):
+    model = Product
+    template_name = "store/catalog.html"
+
+    def get_queryset(self):
+        category = self.request.GET.get("category")
+        # return super().get_queryset("category")
+
+        if not category:
+            # no filter, return all
+            return Product.object.all()
+        else:
+            # filter by category
+            # iexact = exact match (ignore casing)
+            return Product.objecct.filter(category__name__iexact=category)
+
+    def get_context_data(self. **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        content['selected_category'] = self.request.GET.get('category')
+        return context

@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .forms import ContactForm
+
+
 from django.conf import settings
 from django.core.mail import send_mail
 
@@ -25,8 +26,7 @@ def story_art_view(request):
 def shop_view(request):
     return render(request, 'pages/shop.html')
 
-def blog_view(request):
-    return render(request, 'pages/blog.html')
 
 def contact_view(request):
     return render(request, 'pages/contact.html')
+

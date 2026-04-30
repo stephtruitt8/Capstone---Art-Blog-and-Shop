@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/shop.css' %}">
+{% endblock %}
+
+{% block title %}Shop{% endblock %}
+
+{% block content %}
+
+<section class="shop-page">
+
+    <div class="shop-hero">
+        <h1>Shop</h1>
+        <p>Prints, merch, stickers, and creative goods from BartoArts.</p>
+    </div>
+
+    <div class="shop-categories">
+        <a href="#">Prints</a>
+        <a href="#">Stickers</a>
+        <a href="#">Apparel</a>
+        <a href="#">Special</a>
+    </div>
+
+    <div class="shop-toolbar">
+        <div>
+            <button>Availability</button>
+            <button>Price</button>
+        </div>
+        <p>12 Items</p>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <div class="product-image placeholder">Image Coming Soon</div>
+            <h2>Barto Print</h2>
+            <p>$15.00</p>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image placeholder">Image Coming Soon</div>
+            <h2>Sketch Pack</h2>
+            <p>$12.00</p>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image placeholder">Image Coming Soon</div>
+            <h2>Story Art Print</h2>
+            <p>$20.00</p>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image placeholder">Image Coming Soon</div>
+            <h2>Sticker Set</h2>
+            <p>$8.00</p>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
