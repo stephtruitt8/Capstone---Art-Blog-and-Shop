@@ -13,14 +13,7 @@ def gallery_view(request):
 
 # // All links to the different galleries will be added here, and the individual gallery pages will be created as well. For now, they will just render the gallery template.
 
-def illustrations_view(request):
-    return render(request, 'pages/illustrations.html')
 
-def sketches_view(request):
-    return render(request, 'pages/sketches.html')
-
-def story_art_view(request):
-    return render(request, 'pages/story_art.html')
 
 
 def shop_view(request):
