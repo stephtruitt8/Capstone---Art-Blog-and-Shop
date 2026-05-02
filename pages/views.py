@@ -1,24 +1,29 @@
+from typing import Generic
+
 from django.shortcuts import render
 
 
 from django.conf import settings
 from django.core.mail import send_mail
 
+# """""
+# Class-based views:
+
+# Views           = Generic View
+# List View       = get a list of records
+# DetailView      = get a single record
+# CreateView      = create a new record
+# DeleteView      = delete an existing record
+# UpdateView      = update an existing record
+# LoginView       = login
+
+
+# """"""
+
+
 # Create your views here.
 def about_view(request):
     return render(request, 'pages/about.html')
-
-def gallery_view(request):
-    return render(request, 'pages/gallery.html')
-
-# // All links to the different galleries will be added here, and the individual gallery pages will be created as well. For now, they will just render the gallery template.
-
-
-
-
-def shop_view(request):
-    return render(request, 'pages/shop.html')
-
 
 def contact_view(request):
     return render(request, 'pages/contact.html')
