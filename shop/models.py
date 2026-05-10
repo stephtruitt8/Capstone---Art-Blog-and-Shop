@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+
 # Create your models here.
 
 class Category(models.Model):
@@ -19,5 +20,11 @@ class Product(models.Model):
     stock = models.IntegerField()
     created_at = models.DateTimeField(default=timezone.now)
 
+    class Meta:
+        ordering = ["-created_at"]
+
     def __str__(self):
         return self.title
+
+# class Order(models.Model):
+#     user = models.Fo

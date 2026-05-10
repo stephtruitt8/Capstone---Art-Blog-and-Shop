@@ -1,0 +1,216 @@
+.gallery-page {
+    min-height: 100vh;
+    padding: 100px 20px;
+    background: transparent;
+}
+
+/* Hero */
+.gallery-hero {
+    max-width: 850px;
+    margin: 0 auto 60px;
+    padding: 55px 35px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.88);
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    border-radius: 60px;
+    box-shadow: 0 20px 45px rgba(29, 80, 90, 0.12);
+    position: relative;
+}
+
+/* Cloud-like circles */
+.gallery-hero::before,
+.gallery-hero::after {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.gallery-hero::before {
+    width: 120px;
+    height: 120px;
+    top: -35px;
+    left: 90px;
+}
+
+.gallery-hero::after {
+    width: 150px;
+    height: 150px;
+    top: -50px;
+    right: 90px;
+}
+
+.gallery-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: #57fab9;
+    color: #276653;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gallery-hero h1 {
+    font-size: 3.5rem;
+    color: #166a7a;
+    margin-bottom: 15px;
+}
+
+.gallery-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #2f3e46;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.gallery-note {
+    display: inline-block;
+    margin-top: 18px;
+    color: #276653;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Category Cards */
+.gallery-categories {
+    max-width: 850px;
+    width: 80%;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.gallery-category-card {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    border-radius: 0;
+    box-shadow: 0 18px 35px rgba(27, 77, 89, 0.13);
+    border: 0px solid rgba(255, 255, 255, 0.95);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Makes all images fit the cards equally */
+.gallery-category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.65;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.image-top img {
+    object-position: 50% 11%;
+}
+
+.image-center img {
+    object-position: 50% 15%;
+}
+
+.image-bottom img {
+    object-position: 50% 30%;
+}
+
+/* Dark translucent layer over the image */
+.gallery-category-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(22, 106, 122, 0.78),
+        rgba(39, 102, 83, 0.45),
+        rgba(255, 255, 255, 0.08)
+    );
+    z-index: 1;
+}
+
+/* Text sits over the image */
+.gallery-card-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    padding: 35px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Hover effect */
+.gallery-category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px rgba(27, 77, 89, 0.2);
+}
+
+.gallery-category-card:hover img {
+    transform: scale(1.06);
+    opacity: 0.85;
+}
+
+.category-number {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #c9ffe8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.gallery-category-card h2 {
+    color: #ffffff;
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+.gallery-category-card p {
+    max-width: 600px;
+    color: #f0fff9;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .gallery-categories {
+        width: 95%;
+    }
+
+    .gallery-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .gallery-category-card {
+        min-height: 220px;
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 650px) {
+    .gallery-page {
+        padding: 75px 15px;
+    }
+
+    .gallery-hero {
+        padding: 45px 25px;
+        border-radius: 40px;
+    }
+
+    .gallery-hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .gallery-hero::before,
+    .gallery-hero::after {
+        display: none;
+    }
+}

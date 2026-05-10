@@ -2,15 +2,20 @@
 
 {% load static %}
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}?v=2">
 {% endblock %}
 
 {% block title %}Blog{% endblock %}
+{% block main_class %}blog-main{% endblock %}
 
 {% block content %}
 <section class="blog-page">
-    <div class="blog-hero">
-        <h1>BartoArts Blog</h1>
+    <div class="blog-hero cloud-hero">
+        <div class="cloud-puff puff-1"></div>
+        <div class="cloud-puff puff-2"></div>
+        <div class="cloud-puff puff-3"></div>
+
+        <h1>Topics to Explore</h1>
         <p>Thoughts, sketches, stories, updates, and creative notes from the studio.</p>
     </div>
 
@@ -44,6 +49,42 @@
             <img src="{% static 'img/images/project3.png' %}" alt="Blog image">
             <div class="blog-card-content">
                 <span class="blog-category">Story</span>
+                <h2>Building a Creative World</h2>
+                <p>
+                    Notes on storytelling, characters, imagination, and building visual worlds.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <img src="{% static 'img/images/project4.png' %}" alt="Blog image">
+            <div class="blog-card-content">
+                <span class="blog-category">Whats your vision?</span>
+                <h2>Building a Creative World</h2>
+                <p>
+                    Notes on storytelling, characters, imagination, and building visual worlds.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <img src="{% static 'img/images/project5.png' %}" alt="Blog image">
+            <div class="blog-card-content">
+                <span class="blog-category">Focus talk</span>
+                <h2>Building a Creative World</h2>
+                <p>
+                    Notes on storytelling, characters, imagination, and building visual worlds.
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <img src="{% static 'img/images/project6.png' %}" alt="Blog image">
+            <div class="blog-card-content">
+                <span class="blog-category">Should you be perfect?</span>
                 <h2>Building a Creative World</h2>
                 <p>
                     Notes on storytelling, characters, imagination, and building visual worlds.

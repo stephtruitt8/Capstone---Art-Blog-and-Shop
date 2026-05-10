@@ -10,7 +10,7 @@
 {% block content %}
 
     <div class="list">
-        { for prod in product_list %}
+        {% for prod in product_list %}
             <div class="product-card">
                 {% if prod.image %}
                     <img src="{{ prod.image.url }}" alt="{{ prod.title }}" class="product-image">
@@ -23,7 +23,7 @@
                 <label class="stock">Stock: {{ prod.stock }}</label>
             
             </div>
-        { endfor %}
+        {% endfor %}
 
     </div>
 

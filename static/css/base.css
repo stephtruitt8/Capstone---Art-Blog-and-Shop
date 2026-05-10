@@ -37,31 +37,51 @@ body {
 }
 
 
-/*---FooterGrid---*/
-
-.site-footer {
-    background-color: #2f7d32;
-    padding: 70px 60px;
-    margin-top: 80px;
-    border-top: 1px solid rgba(0,0,0,0.08);
-    margin: 0;
-}
-
+/*---Footer---*/
 
 .site-footer {
     background: #1f5f2e;
-    padding: 80px 20px;
-    display: flex;
-    justify-content: center;
+    padding: 70px 20px 35px;
+    margin: 0;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    text-align: center;
+    color: white;
 }
 
+/* Logo / Signature image area */
+.footer-logo-area {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.footer-logo-img {
+    width: 500px;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.footer-logo-area h2 {
+    margin: 8px 0 4px;
+    color: white;
+}
+
+.footer-logo-area p {
+    margin: 0;
+    color: white;
+    opacity: 0.9;
+}
+
+/* Main footer layout */
 .footer-grid {
+    max-width: 900px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 80px;
-
-    max-width: 900px;
-    width: 0 auto;
+    gap: 40px;
+    align-items: center;
 }
 
 .footer-column {
@@ -81,66 +101,62 @@ body {
     opacity: 0.7;
 }
 
-/* Keep text clean */
-.footer-column h3 {
-    font-family: 'Caveat', cursive;
-    margin-bottom: 15px;
+/* Contact button */
+.footer-btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 999px;
+    background: rgb(98, 255, 158);
+    color: #1f5f2e !important;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.footer-column p,
-.footer-column li {
-    margin-bottom: 8px;
+.footer-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
 }
 
-.footer-column ul {
-    list-style: none;
-    padding: 0;
+.footer-logo-area .footer-btn {
+    margin-top: 18px;
 }
 
-.footer-column input {
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid white;
+/* Stars */
+.stars h1 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 8px;
     color: white;
-    padding: 8px;
-    text-align: center;
 }
 
-.footer-column input::placeholder {
-    color: rgba(255,255,255,0.7);
+/* Signature line */
+.footer-signature {
+    max-width: 900px;
+    margin: 35px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.25);
 }
 
-/* Social icons */
-.socials {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 15px;
+.footer-signature p {
+    margin: 0;
+    color: white;
+    opacity: 0.9;
 }
 
-.socials span {
-    border: 1px solid black;
-    border-radius: 50%;
-    padding: 10px;
+.footer-logo-area .stars {
+    margin-top: 20px;
 }
 
-/* ⭐ Stars alignment */
-.stars {
-    display: flex;
-    align-items: flex-end; /* pushes stars toward bottom */
-}
+/* Mobile */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
 
-.stars img {
-    filter: invert(1);
-    max-width: 120px;
-}
-.small-stuff {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-/* Push stars to bottom */
-.small-stuff .stars {
-    margin-top: auto;
+    .footer-logo-img {
+        width: 90px !important;
+        max-width: 90px !important;
+    }
 }

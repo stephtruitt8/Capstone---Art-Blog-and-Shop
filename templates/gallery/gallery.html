@@ -4,16 +4,55 @@
 
 {% block title %}Gallery{% endblock %}
 
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <section class="gallery-page">
-    <h1>Gallery</h1>
-    <p>Explore different sides of BartoArts.</p>
+    <div class="gallery-hero">
+        <span class="gallery-label">BartoArts Gallery</span>
+
+        <h1>Choose Your Creative Path</h1>
+
+        <p>
+            Explore the gallery by category. Visit illustrations for finished artwork,
+            sketches for raw ideas, and story art for pieces built around characters,
+            scenes, and visual storytelling.
+        </p>
+
+        <small class="gallery-note">Select a section below to begin exploring.</small>
+    </div>
 
     <div class="gallery-categories">
-        <a href="{% url 'illustrations' %}">Illustrations</a>
-        <a href="{% url 'sketches' %}">Sketches</a>
-        <a href="{% url 'story_art' %}">Story Art</a>
+
+        <a href="{% url 'illustrations' %}" class="gallery-category-card image-top">
+            <img src="{% static 'img/images/illustration1.jpg' %}" alt="Illustrations" class="gallery-category-image">
+            <div class="gallery-card-overlay">
+                <span class="category-number">01</span>
+                <h2>Illustrations</h2>
+                <p>Finished artwork, colorful pieces, and polished creative designs.</p>
+            </div>
+        </a>
+
+        <a href="{% url 'sketches' %}" class="gallery-category-card image-center">
+            <img src="{% static 'img/images/sketch1.png' %}" alt="Sketches" class="gallery-category-image">
+            <div class="gallery-card-overlay">
+                <span class="category-number">02</span>
+                <h2>Sketches</h2>
+                <p>Loose ideas, rough drawings, concepts, and behind-the-scenes studies.</p>
+            </div>
+        </a>
+
+        <a href="{% url 'story_art' %}" class="gallery-category-card image-bottom">
+            <img src="{% static 'img/images/story1.png' %}" alt="Story Art" class="gallery-category-image">
+            <div class="gallery-card-overlay">
+                <span class="category-number">03</span>
+                <h2>Story Art</h2>
+                <p>Visual storytelling, character moments, comic ideas, and scene concepts.</p>
+            </div>
+        </a>
     </div>
 </section>
 

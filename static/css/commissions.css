@@ -1,0 +1,229 @@
+.commission-page {
+    min-height: 100vh;
+    padding: 70px 45px;
+    background: rgb(50, 201, 50);
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.commission-info strong {
+    display: block;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.commission-info strong:nth-child(2) {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* LEFT SIDE */
+.commission-info {
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.commission-info h2,
+.commission-info h3 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.commission-info h3 {
+    margin-top: 32px;
+}
+
+.commission-info p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* RIGHT SIDE */
+.commission-form-box {
+    max-width: 430px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.commission-form-box h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.form-intro {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #f2f2f2;
+}
+
+.commission-form-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.commission-form-box input,
+.commission-form-box textarea {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+.commission-form-box textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.commission-form-box label {
+    font-size: 0.95rem;
+    margin-top: 6px;
+}
+
+.checkbox-group,
+.radio-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-group label,
+.radio-row label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input,
+.radio-row input {
+    width: auto;
+}
+
+.radio-row {
+    flex-direction: row;
+    gap: 35px;
+}
+
+.date-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: 8px;
+}
+
+.commission-form-box input[type="file"] {
+    background: #fff;
+    color: #333;
+    border: 2px dashed #cfcfcf;
+    padding: 24px;
+}
+
+.commission-form-box button {
+    margin-top: 12px;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #57fab9;
+    color: #073b32;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.commission-form-box button:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+.radio-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-column label,
+.terms-box label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.radio-column input,
+.terms-box input {
+    width: auto;
+}
+
+.small-note {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.terms-box {
+    margin-top: 8px;
+}
+
+.terms-box p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+    .commission-page {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 60px 25px;
+    }
+
+    .commission-info {
+        max-width: 750px;
+    }
+
+    .commission-form-box {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .commission-page {
+        padding: 45px 18px;
+    }
+
+    .commission-info h2,
+    .commission-info h3 {
+        font-size: 1.15rem;
+    }
+
+    .commission-info p {
+        font-size: 0.95rem;
+    }
+
+    .commission-form-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .radio-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .date-row {
+        grid-template-columns: 1fr;
+    }
+}
