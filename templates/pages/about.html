@@ -11,94 +11,252 @@
 {% block main_class %}about-main{% endblock %}
 
 {% block content %}
-<section class="about-page">
 
-    <div class="cloud-band">
-        <div class="cloud cloud-1"></div>
-        <div class="cloud cloud-2"></div>
-        <div class="cloud cloud-3"></div>
+<section class="about-museum-hero gallery-hero">
+
+    <!-- Scrolling Gallery Side -->
+    <div class="hero-gallery">
+        <div class="gallery-track" id="aboutGalleryTrack">
+
+            <div class="gallery-art-card">
+                <img src="{% static 'img/images/project1.png' %}" alt="Artwork sample 1">
+                <p>Illustration</p>
+            </div>
+
+            <div class="gallery-art-card tall">
+                <img src="{% static 'img/images/project2.png' %}" alt="Artwork sample 2">
+                <p>Story Art</p>
+            </div>
+
+            <div class="gallery-art-card">
+                <img src="{% static 'img/images/project3.png' %}" alt="Artwork sample 3">
+                <p>Comics</p>
+            </div>
+
+            <div class="gallery-art-card tall">
+                <img src="{% static 'img/images/project4.png' %}" alt="Artwork sample 4">
+                <p>Animation</p>
+            </div>
+
+            <div class="gallery-art-card">
+                <img src="{% static 'img/images/project5.png' %}" alt="Artwork sample 5">
+                <p>Sketches</p>
+            </div>
+
+        </div>
     </div>
 
-    <section class="about-hero">
+    <!-- Text Side -->
+    <div class="hero-right">
+        <p class="eyebrow">BartoArts Archive</p>
 
-        <!-- Intro Card -->
-        <div class="about-card intro-card">
-            <img class="card-image intro-image" src="{% static 'img/images/my-picture.webp' %}" alt="Barto">
-            <h1>Who is Barto?</h1>
+        <h1>
+            Meet the artist<br>
+            behind the creative<br>
+            collection.
+        </h1>
+
+        <div class="hero-copy-row">
+            <a href="#story" class="museum-btn">Explore Story</a>
             <p>
-                Barto is a self-taught artist who later went to art college to sharpen his skills and grow in the world of art. He creates comics, illustrations, animations, and more, while also exploring film, storytelling, and ideas that can inspire both younger and older generations.
-            </p>
-            <p>
-                He enjoys drawing from life, learning from different cultures, and carrying those experiences back into his own work. This space is meant to feel personal, artistic, and full of the things he loves most: creativity, gaming, storytelling, and exploration.
+                BartoArts is a creative archive of illustrations, comics,
+                animations, stories, and ideas shaped by culture, curiosity,
+                and imagination.
             </p>
         </div>
-
-        <!-- Alternating Sections -->
-        <div class="about-sections">
-
-            <div class="about-card split-card">
-                <div class="split-image">
-                    <img class="card-image" src="{% static 'img/images/project1.png' %}" alt="Artwork 1">
-                </div>
-                <div class="split-text">
-                    <h2>What is Barto’s art about?</h2>
-                    <p>
-                        Barto’s art reflects his passion for storytelling and visual expression. His work explores emotion, identity, culture, and the human experience, blending traditional artistic foundations with a more modern style.
-                    </p>
-                    <p>
-                        Inspired by Japanese culture and many different life experiences, his art can shift between high-action intensity and soft peaceful moments. Sometimes it is loud, dramatic, and full of conflict. Other times it feels calm, open, and reflective.
-                    </p>
-                    <p>
-                        His goal is simple: to make people feel something, whether that is emotion, curiosity, or the inspiration to begin their own creative path.
-                    </p>
-                </div>
-            </div>
-
-            <div class="about-card split-card reverse-card">
-                <div class="split-image">
-                    <img class="card-image" src="{% static 'img/images/project2.png' %}" alt="Artwork 2">
-                </div>
-                <div class="split-text">
-                    <h2>Where does Barto study?</h2>
-                    <p>
-                        Barto studied at Cleveland Institute of Art, where he developed his skills and artistic voice, but his education does not stop in the classroom.
-                    </p>
-                    <p>
-                        Inspiration can find him almost anywhere: in a library, a café, a beach, a restaurant abroad, or even on a plane ride. Wherever inspiration blows, Barto is ready to create.
-                    </p>
-                </div>
-            </div>
-
-            <div class="about-card split-card">
-                <div class="split-image">
-                    <img class="card-image" src="{% static 'img/images/project3.png' %}" alt="Artwork 3">
-                </div>
-                <div class="split-text">
-                    <h2>The person behind it all</h2>
-                    <p>
-                        Steph Truitt is the artist behind BartoArts. He cares deeply about encouraging creativity in a world that can sometimes feel gray.
-                    </p>
-                    <p>
-                        One quote he comes back to when life feels dim is:
-                    </p>
-                    <p class="quote">
-                        “People’s dreams... have no end!”<br>
-                        <span>— Marshall D. Teach</span>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <div class="grass-section">
-        <div class="hill hill-back"></div>
-        <div class="hill hill-front"></div>
-        <div class="grass-blade blade-1"></div>
-        <div class="grass-blade blade-2"></div>
-        <div class="grass-blade blade-3"></div>
-        <div class="grass-blade blade-4"></div>
     </div>
 
 </section>
+
+    <!-- MOVING / BANNER TEXT -->
+    <div class="about-marquee">
+        <span>Illustration</span>
+        <span>Story Art</span>
+        <span>Comics</span>
+        <span>Animation</span>
+        <span>Creative Archive</span>
+    </div>
+
+    <!-- INTRO DISCOVERY SECTION -->
+    <section class="museum-discovery" id="story">
+        <div class="section-title">
+            <h2>
+                Discover —<br>
+                art with personal value
+            </h2>
+        </div>
+
+        <div class="feature-art">
+            <div class="yellow-window">
+                <img src="{% static 'img/images/project2.png' %}" alt="Artwork feature">
+            </div>
+            <h3>BartoArts, Creative Space</h3>
+            <p>Where storytelling, culture, and imagination meet.</p>
+        </div>
+
+        <div class="side-statue">
+            <img src="{% static 'img/images/project3.png' %}" alt="Artwork sample">
+        </div>
+    </section>
+
+    <!-- THREE FEATURE CARDS -->
+    <section class="museum-programs">
+        <div class="program-card orange-card">
+            <p class="card-year">2026</p>
+            <img src="{% static 'img/images/project1.png' %}" alt="Art card">
+            <h3>A vital link to creative roots</h3>
+            <a href="#artist">Artist Story</a>
+        </div>
+
+        <div class="program-card dark-card">
+            <p class="card-year">BartoArts</p>
+            <h3>
+                Discover artwork<br>
+                that carries spirit
+            </h3>
+            <img src="{% static 'img/images/project2.png' %}" alt="Art card">
+        </div>
+
+        <div class="program-card light-card">
+            <h3>
+                Welcome to<br>
+                BartoArts
+            </h3>
+            <p>
+                A creative space where comics, illustrations, animations,
+                and stories grow into something meaningful.
+            </p>
+            <span>Creative Collection 03</span>
+        </div>
+    </section>
+
+    <!-- DARK COLLECTION BAND -->
+    <section class="artwork-collection">
+        <div class="collection-heading">
+            <h2>Artwork collections</h2>
+            <p>Gathered from ideas, sketches, stories, and moments of inspiration.</p>
+            <a href="#" class="outline-btn">View Gallery</a>
+        </div>
+
+        <div class="collection-grid">
+            <div class="collection-item">
+                <img src="{% static 'img/images/project1.png' %}" alt="Collection item">
+                <p>Comics</p>
+            </div>
+
+            <div class="collection-item">
+                <img src="{% static 'img/images/project2.png' %}" alt="Collection item">
+                <p>Illustrations</p>
+            </div>
+
+            <div class="collection-item">
+                <img src="{% static 'img/images/project3.png' %}" alt="Collection item">
+                <p>Story Art</p>
+            </div>
+
+            <div class="collection-item">
+                <img src="{% static 'img/images/project4.png' %}" alt="Collection item">
+                <p>Animations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTIST STORY GRID -->
+    <section class="artist-grid-section" id="artist">
+        <div class="artist-grid">
+            <div class="grid-note">
+                <p class="tiny-label">Artist Profile</p>
+                <h3>Who is Barto?</h3>
+                <p>
+                    Barto is a self-taught artist who later went to art college
+                    to sharpen his skills and grow in the world of art.
+                </p>
+            </div>
+
+            <div class="grid-image large">
+                <img src="{% static 'img/images/my-picture.webp' %}" alt="Barto">
+            </div>
+
+            <div class="grid-note">
+                <h3>Creative Study</h3>
+                <p>
+                    Barto studied at Cleveland Institute of Art, where he developed
+                    his artistic voice, but his education continues through life,
+                    culture, travel, and observation.
+                </p>
+            </div>
+
+            <div class="grid-image">
+                <img src="{% static 'img/images/project1.png' %}" alt="Artwork">
+            </div>
+
+            <div class="grid-note wide">
+                <h3>What is Barto’s art about?</h3>
+                <p>
+                    Barto’s art reflects storytelling and visual expression.
+                    His work explores emotion, identity, culture, and the human
+                    experience, blending traditional foundations with modern style.
+                </p>
+            </div>
+
+            <div class="grid-image">
+                <img src="{% static 'img/images/project2.png' %}" alt="Artwork">
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE BANNER -->
+    <section class="quote-banner">
+        <div class="quote-mark">“</div>
+        <h2>
+            People’s dreams<br>
+            have no end.
+        </h2>
+        <p>— Marshall D. Teach</p>
+        <a href="#" class="museum-btn dark-button">Explore Gallery</a>
+    </section>
+
+    <!-- ABOUT EVENT CARDS -->
+    <section class="about-events">
+        <div class="events-heading">
+            <h2>About visual art events</h2>
+            <a href="#" class="outline-light-btn">Contact</a>
+        </div>
+
+        <div class="event-card-grid">
+            <article class="event-card">
+                <img src="{% static 'img/images/project1.png' %}" alt="Event art">
+                <div class="event-info">
+                    <strong>Story</strong>
+                    <p>Comics, sketches, and personal ideas collected through time.</p>
+                </div>
+            </article>
+
+            <article class="event-card">
+                <img src="{% static 'img/images/project2.png' %}" alt="Event art">
+                <div class="event-info">
+                    <strong>Culture</strong>
+                    <p>Inspired by travel, Japanese influence, and everyday life.</p>
+                </div>
+            </article>
+
+            <article class="event-card">
+                <img src="{% static 'img/images/project3.png' %}" alt="Event art">
+                <div class="event-info">
+                    <strong>Imagination</strong>
+                    <p>Building worlds that feel emotional, curious, and alive.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- FOOTER STRIP -->
+    <div class="visit-strip">
+        <span>We are here!</span>
+        <span>Visit BartoArts</span>
+        <span>Create with us</span>
+    </div>
+
+</section>
+
 {% endblock %}
