@@ -28,7 +28,8 @@
 
     <div class="contact-layout">
 
-        <form id="contactForm" class="contact-form">
+        <form id="contactForm" class="contact-form" method="POST">
+            {% csrf_token %}
 
             <h2>Enter your information below</h2>
 
@@ -106,51 +107,3 @@
 </section>
 
 {% endblock content %}
-
-{% block js %}
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-    emailjs.init({
-        publicKey: "YOUR_PUBLIC_KEY"
-    });
-
-    const contactForm = document.getElementById("contactForm");
-    const contactBtn = document.getElementById("contactBtn");
-    const contactStatus = document.getElementById("contactStatus");
-
-    contactForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        contactBtn.textContent = "Sending...";
-        contactBtn.disabled = true;
-        contactStatus.textContent = "";
-
-        emailjs.sendForm(
-            "YOUR_SERVICE_ID",
-            "YOUR_TEMPLATE_ID",
-            this
-        )
-        .then(function() {
-            contactStatus.textContent = "Message sent successfully!";
-            contactStatus.className = "contact-status success";
-
-            contactForm.reset();
-            contactBtn.textContent = "Send Message";
-            contactBtn.disabled = false;
-        })
-        .catch(function(error) {
-            console.log("EmailJS Error:", error);
-
-            contactStatus.textContent = "Something went wrong. Please try again.";
-            contactStatus.className = "contact-status error";
-
-            contactBtn.textContent = "Send Message";
-            contactBtn.disabled = false;
-        });
-    });
-</script>
-
-{% endblock js %}
-

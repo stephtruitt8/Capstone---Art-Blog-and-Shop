@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+import certifi
+import environ
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -65,7 +68,7 @@ ROOT_URLCONF = 'bartosite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / 'templates' ],
+        'DIRS': [ BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,12 +145,22 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Secure SSL/TLS connection
+os.environ['SSL_CERT_FILE'] = certifi.where()
+
+# Initialize environment variables
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+print("Looking for .env here:", os.path.join(BASE_DIR, ".env"))
+print("SMTP_EMAIL:", env("SMTP_EMAIL", default="NOT FOUND"))
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-#EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-#EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-#DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_TIMEOUT = 30
+EMAIL_HOST_USER = env('SMTP_EMAIL')
+EMAIL_HOST_PASSWORD = env('SMTP_PASSWORD')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_TIMEOUT = 60
