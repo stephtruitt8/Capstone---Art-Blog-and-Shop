@@ -148,6 +148,93 @@ body {
     margin-top: 20px;
 }
 
+/* Accounts */
+
+.account-page {
+    min-height: 80vh;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #d8f3ff, #f6fff2);
+}
+
+.account-card {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.account-card h1 {
+    color: #166a7a;
+    margin-bottom: 10px;
+}
+
+.account-card p {
+    color: #3f4f4f;
+    line-height: 1.6;
+}
+
+.account-card form {
+    text-align: left;
+    margin-top: 25px;
+}
+
+.account-card form p {
+    margin-bottom: 18px;
+}
+
+.account-card label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #2f3e46;
+}
+
+.account-card input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #d7e7e7;
+    border-radius: 14px;
+    outline: none;
+}
+
+.account-card input:focus {
+    border-color: #166a7a;
+}
+
+.account-btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 999px;
+    background: #166a7a;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.account-btn:hover {
+    background: #0f4f5c;
+}
+
+.account-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.account-link a {
+    color: #d97706;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
 /* Mobile */
 @media (max-width: 768px) {
     .footer-grid {

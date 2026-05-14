@@ -1,16 +1,19 @@
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
+from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
-
 # Create your views here.
 
-def login_view(request):
+class SignUpView(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'accounts/signup.html'
+    
+def LoginView(request):
     return render(request, 'accounts/login.html')
 
-def logout_view(request):
+def LogoutView(request):
     return render(request, 'accounts/logout.html')
 
-def signup_view(request):
-    return render(request, 'accounts/signup.html')
-
-def profile_view(request):
-    return render(request, 'accounts/profile.html')
-
+def ProfileView(request):
+    return render(request, 'accounts/profile.html') 
