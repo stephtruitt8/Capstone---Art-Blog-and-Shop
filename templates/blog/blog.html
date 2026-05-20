@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% load static %}
+
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}?v=4">
 {% endblock %}
 
 {% block title %}Blog{% endblock %}
 {% block main_class %}blog-main{% endblock %}
 
 {% block content %}
+
 <section class="blog-page">
     <div class="blog-hero cloud-hero">
         <div class="cloud-puff puff-1"></div>
@@ -21,78 +23,187 @@
 
     <div class="blog-grid">
 
-        <article class="blog-card">
+        <!-- PAGE 1 -->
+        <article class="blog-card blog-post page-1">
             <img src="{% static 'img/images/project1.png' %}" alt="Blog image">
+
             <div class="blog-card-content">
                 <span class="blog-category">Art</span>
                 <h2>Finding Inspiration in Everyday Life</h2>
-                <p>
+
+                <p class="blog-preview">
                     A small reflection on how ordinary moments can turn into creative ideas.
                 </p>
-                <a href="#" class="read-more">Read More</a>
+
+                <details class="blog-details">
+                    <summary>Read More</summary>
+                    <div class="blog-hidden-content">
+                        <p>
+                            Inspiration can come from places we do not always expect: a walk outside,
+                            a conversation, a song, a sketch, or even a quiet moment. Art does not
+                            always begin with a perfect idea. Sometimes it begins with paying attention.
+                        </p>
+                    </div>
+                </details>
             </div>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card blog-post page-1">
             <img src="{% static 'img/images/project2.png' %}" alt="Blog image">
+
             <div class="blog-card-content">
                 <span class="blog-category">Process</span>
                 <h2>Behind the Sketchbook</h2>
-                <p>
+
+                <p class="blog-preview">
                     A look into the messy, fun, and personal process behind creating art.
                 </p>
-                <a href="#" class="read-more">Read More</a>
+
+                <details class="blog-details">
+                    <summary>Read More</summary>
+                    <div class="blog-hidden-content">
+                        <p>
+                            The sketchbook is where ideas can be imperfect. It is a place for testing,
+                            exploring, failing, and finding the shape of something new before it becomes
+                            finished artwork.
+                        </p>
+                    </div>
+                </details>
             </div>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card blog-post page-1">
             <img src="{% static 'img/images/project3.png' %}" alt="Blog image">
+
             <div class="blog-card-content">
                 <span class="blog-category">Story</span>
                 <h2>Building a Creative World</h2>
-                <p>
+
+                <p class="blog-preview">
                     Notes on storytelling, characters, imagination, and building visual worlds.
                 </p>
-                <a href="#" class="read-more">Read More</a>
+
+                <details class="blog-details">
+                    <summary>Read More</summary>
+                    <div class="blog-hidden-content">
+                        <p>
+                            A creative world is built through details: characters, colors, places,
+                            conflicts, emotions, and the feeling you want people to remember after
+                            seeing the work.
+                        </p>
+                    </div>
+                </details>
             </div>
         </article>
 
-        <article class="blog-card">
+        <!-- PAGE 2 -->
+        <article class="blog-card blog-post page-2">
             <img src="{% static 'img/images/project4.png' %}" alt="Blog image">
+
             <div class="blog-card-content">
-                <span class="blog-category">Whats your vision?</span>
-                <h2>Building a Creative World</h2>
-                <p>
-                    Notes on storytelling, characters, imagination, and building visual worlds.
+                <span class="blog-category">What's Your Vision?</span>
+                <h2>Creating With Purpose</h2>
+
+                <p class="blog-preview">
+                    A reminder to think about the feeling, message, and direction behind your work.
                 </p>
-                <a href="#" class="read-more">Read More</a>
+
+                <details class="blog-details">
+                    <summary>Read More</summary>
+                    <div class="blog-hidden-content">
+                        <p>
+                            Vision gives your art direction. It does not mean you need everything
+                            figured out right away. It simply means asking what you want the piece
+                            to say, feel like, or become.
+                        </p>
+                    </div>
+                </details>
             </div>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card blog-post page-2">
             <img src="{% static 'img/images/project5.png' %}" alt="Blog image">
+
             <div class="blog-card-content">
-                <span class="blog-category">Focus talk</span>
-                <h2>Building a Creative World</h2>
-                <p>
-                    Notes on storytelling, characters, imagination, and building visual worlds.
+                <span class="blog-category">Focus Talk</span>
+                <h2>Staying Creative When Life Gets Loud</h2>
+
+                <p class="blog-preview">
+                    Thoughts on focus, creative patience, and returning to your work.
                 </p>
-                <a href="#" class="read-more">Read More</a>
+
+                <details class="blog-details">
+                    <summary>Read More</summary>
+                    <div class="blog-hidden-content">
+                        <p>
+                            Creativity takes focus, but focus does not always mean forcing yourself.
+                            Sometimes it means slowing down, clearing space, and giving yourself
+                            permission to return to the work one step at a time.
+                        </p>
+                    </div>
+                </details>
             </div>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card blog-post page-2">
             <img src="{% static 'img/images/project6.png' %}" alt="Blog image">
+
             <div class="blog-card-content">
-                <span class="blog-category">Should you be perfect?</span>
-                <h2>Building a Creative World</h2>
-                <p>
-                    Notes on storytelling, characters, imagination, and building visual worlds.
+                <span class="blog-category">Should You Be Perfect?</span>
+                <h2>Letting Go of Perfect Art</h2>
+
+                <p class="blog-preview">
+                    A short reflection on why progress matters more than perfection.
                 </p>
-                <a href="#" class="read-more">Read More</a>
+
+                <details class="blog-details">
+                    <summary>Read More</summary>
+                    <div class="blog-hidden-content">
+                        <p>
+                            Perfect art can become a trap. Growth happens when you allow yourself
+                            to make things, learn from them, and keep moving. A finished imperfect
+                            piece can teach more than an idea that never leaves your head.
+                        </p>
+                    </div>
+                </details>
             </div>
         </article>
 
     </div>
+
+    <!-- PAGINATION BUTTONS -->
+    <div class="blog-pagination">
+        <button class="page-btn active" onclick="showBlogPage(1)">1</button>
+        <button class="page-btn" onclick="showBlogPage(2)">2</button>
+    </div>
 </section>
+
+<script>
+    function showBlogPage(pageNumber) {
+        const posts = document.querySelectorAll('.blog-post');
+        const buttons = document.querySelectorAll('.page-btn');
+
+        posts.forEach(post => {
+            post.style.display = 'none';
+        });
+
+        document.querySelectorAll('.page-' + pageNumber).forEach(post => {
+            post.style.display = 'grid';
+        });
+
+        buttons.forEach(button => {
+            button.classList.remove('active');
+        });
+
+        buttons[pageNumber - 1].classList.add('active');
+
+        window.scrollTo({
+            top: document.querySelector('.blog-page').offsetTop,
+            behavior: 'smooth'
+        });
+    }
+
+    showBlogPage(1);
+</script>
+
 {% endblock %}

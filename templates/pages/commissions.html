@@ -11,52 +11,115 @@
 {% block content %}
 
 <section class="commission-page">
+
+    <!-- LEFT SIDE -->
     <div class="commission-info">
-        <strong>Important Information!</strong>
-        <strong>Please read before submitting a commission request.</strong>
 
-        <p>This is a open commission form.</p>
-        <p>This form will remain available for anyone who would like to submit a commission request at any time.</p>
-        <p>However, I will only be accepting a limited number of commissions at a time, so please be patient if you submit a request and do not receive an immediate response.</p>
-        <p>If I choose to accept your commission, I will contact you through one of your preferred contact methods. If I reach out and you are unable to move forward with the commission at that time, please let me know whether you would like your submission removed or placed back on the waitlist.</p>
-        <p>If you do not receive a message from me, it means I either have not gotten to your submission yet or I am unable to take on your commission at this time.</p>
+        <div class="commission-header-card">
+            <h1>Commissions Rules</h1>
+            <h1>★★★</h1>
+           
 
-        <p>- MORE INFO FORM -</p>
+            <p>
+                Please read through the information below before submitting a request.
+                This helps make sure your idea, timeline, and commission type are a good fit.
+            </p>
+        </div>
 
-        <p>This commission form is primarily for illustration requests.</p>
-        <p>Deadlines may be included in your submission, but they are not recommended.
-        If you need to make changes to your submission after sending it, please contact me by email.</p>
-        <p>Multiple submissions for different illustration ideas are allowed.</p>
+        <div class="info-card">
+            <h1>★★★</h1>
+            <h2>Important Information</h2>
+             <h1>--------------------------------</h1>
+            <p>
+                This is an open commission form, which means you may submit a request at any time.
+                However, I only accept a limited number of commissions at once.
+            </p>
+            <p>
+                If your commission is selected, I will contact you through one of your preferred
+                contact methods. If you are unable to move forward at that time, please let me know
+                if you would like your request removed or placed back on the waitlist.
+            </p>
+            <p>
+                If you do not receive a message from me, it means I have not reached your submission yet
+                or I am unable to accept the commission at this time.
+            </p>
+        </div>
 
-        <p>- PRICE AND PAYMENT METHOD -</p>
+        <div class="info-card">
+            <h1>★★★</h1>
+            <h2>About the Form</h2>
+             <h1>--------------------------------</h1>
+            <p>
+                This form is mainly for illustration commission requests.
+                Deadlines may be included, but they are not recommended unless absolutely needed.
+            </p>
+            <p>
+                If you need to make changes after submitting your request, please contact me by email.
+                Multiple submissions are allowed if they are for different illustration ideas.
+            </p>
+        </div>
 
-        <p>Payment Method: PayPal</p>
-        <p>Personal Commissions: $200 USD</p>
-        <p>Commercial Commissions: $450 USD</p>
-        <p>Additional characters, detailed backgrounds, or complex requests may include extra charges ranging from $50–$100 USD.</p>
-        <p>Before the commission begins, payment must be made in full. Partial payments and split payments are not accepted.</p>
+        <div class="info-card price-card">
+            <h1>★★★</h1>
+            <h2>Prices & Payment</h2>
+            <h1>--------------------------------</h1>
 
-        <p>- THE DO NOTS! -</p>
+            <div class="price-list">
+                <div>
+                    <strong>Personal Commissions</strong>
+                    <span>$200 USD</span>
+                </div>
 
-        <p>Please do not submit multiple copies of the same commission request if you have not heard back from me.</p>
-        <p>Please do not submit commissions with tight deadlines. Since this form is open and submissions are selected based on availability, I may not be able to choose or complete certain commissions within a short timeframe.</p>
-        <p>Please do not submit large-scale projects through this form. For larger projects or special inquiries, please contact me directly by email.</p>
+                <div>
+                    <strong>Commercial Commissions</strong>
+                    <span>$450 USD</span>
+                </div>
 
-        <p>For questions, changes, or special inquiries, please email me here:
-        toxiotrabarts2026@gmail.com</p>
+                <div>
+                    <strong>Extra Details</strong>
+                    <span>$50–$100 USD</span>
+                </div>
+            </div>
+
+            <p>
+                Payment is accepted through PayPal. Before the commission begins,
+                payment must be made in full. Partial payments and split payments are not accepted.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h1>★★★</h1>
+            <h2>Please Do Not Submit</h2>
+            <h1>--------------------------------</h1>
+            <ul>
+                <li>Multiple copies of the same commission request.</li>
+                <li>Requests with tight or urgent deadlines.</li>
+                <li>Large-scale projects through this form.</li>
+            </ul>
+
+            <p>
+                For larger projects, special inquiries, questions, or changes,
+                please email me directly at:
+            </p>
+
+            <a href="mailto:toxiotrabarts2026@gmail.com" class="email-link">
+                toxiotrabarts2026@gmail.com
+            </a>
+        </div>
 
     </div>
 
+    <!-- RIGHT SIDE -->
     <div class="commission-form-box">
         <h2>Commission Form</h2>
-        <p class="form-intro">Complete the form to submit a commission.</p>
+        <p class="form-intro">Complete the form below to submit your request.</p>
 
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
 
             <input type="email" name="email" placeholder="Email">
 
-            <textarea name="contact" placeholder="Please provide your preferred contact methods and usernames."></textarea>
+            <textarea name="contact" placeholder="Preferred contact methods and usernames"></textarea>
 
             <label>What kind of commission is this?</label>
 
@@ -94,14 +157,17 @@
                 <input type="text" name="year" placeholder="YYYY">
             </div>
 
-            <textarea name="description" placeholder="Please provide a detailed description of what you would like illustrated."></textarea>
+            <textarea name="description" placeholder="Describe what you would like illustrated"></textarea>
 
             <label>Reference Image</label>
             <input type="file" name="reference_image">
 
-            <textarea name="links" placeholder="Please provide any links needed for reference."></textarea>
+            <textarea name="links" placeholder="Reference links"></textarea>
 
-            <label>Can I stream this commission? <span class="small-note">(twitch.tv/mako_vice)</span></label>
+            <label>
+                Can I stream this commission?
+                <span class="small-note">(twitch.tv/mako_vice)</span>
+            </label>
 
             <div class="radio-column">
                 <label>
@@ -115,7 +181,7 @@
                 </label>
             </div>
 
-            <textarea name="additional_info" placeholder="Any additional info?"></textarea>
+            <textarea name="additional_info" placeholder="Any additional information?"></textarea>
 
             <div class="terms-box">
                 <p>
@@ -131,5 +197,7 @@
             <button type="submit">Submit Commission</button>
         </form>
     </div>
+
 </section>
+
 {% endblock %}

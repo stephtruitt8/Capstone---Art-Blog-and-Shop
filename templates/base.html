@@ -8,19 +8,35 @@
 
     {% load static %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}?v=5">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}?v=13">
     {% block css %}{% endblock %}
 </head>
 <body>
     
-    <nav>
-        <a href="{% url 'gallery' %}">画廊</a>
-        <a href="{% url 'shop' %}">Shop</a>
-        <a href="{% url 'blog' %}">Blog</a>
-        <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'contact' %}">Contact</a>
-        <a href="{% url 'commissions' %}">Commissions</a>
+    <header class="site-header">
+    <nav class="custom-navbar">
+
+        <a href="{% url 'gallery' %}" class="navbar-logo">
+            <img src="{% static 'img/images/Logo.png' %}" alt="BartoArts Logo">
+            
+        </a>
+
+        <div class="navbar-links">
+            <a href="{% url 'gallery' %}">画廊</a>
+            <a href="{% url 'shop' %}">Shop</a>
+            <a href="{% url 'blog' %}">Blog</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'commissions' %}">Commissions</a>
+
+            <a href="{% url 'cart_detail' %}" class="nav-cart-link">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-count">{{ cart_count }}</span>
+            </a>
+        </div>
+
     </nav>
+</header>
 
     <div class="main {% block main_class %}{% endblock %}">
         {% block content %}{% endblock %}

@@ -1,0 +1,135 @@
+.art-gallery-page {
+    min-height: 100vh;
+    padding: 90px 20px;
+    background: transparent
+    color: #1f2d24;
+}
+
+.art-gallery-hero {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 70px;
+}
+
+.art-gallery-hero span {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #315c3b;
+}
+
+.art-gallery-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+
+.art-gallery-hero p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #3f4d43;
+}
+
+.art-gallery-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+    align-items: start;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    opacity: 0.85;
+}
+
+/* Makes some images different sizes like your reference */
+.gallery-img:nth-child(2),
+.gallery-img:nth-child(7),
+.gallery-img:nth-child(10) {
+    height: 260px;
+}
+
+.gallery-img:nth-child(3),
+.gallery-img:nth-child(8) {
+    height: 190px;
+}
+
+.gallery-img:nth-child(5),
+.gallery-img:nth-child(12) {
+    height: 240px;
+}
+
+/* Zoom modal */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.close-modal {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+    .art-gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .art-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .art-gallery-hero h1 {
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .art-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-img,
+    .gallery-img:nth-child(2),
+    .gallery-img:nth-child(3),
+    .gallery-img:nth-child(5),
+    .gallery-img:nth-child(7),
+    .gallery-img:nth-child(8),
+    .gallery-img:nth-child(10),
+    .gallery-img:nth-child(12) {
+        height: 260px;
+    }
+}

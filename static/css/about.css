@@ -1,0 +1,616 @@
+.about-page {
+    min-height: 100vh;
+    padding: 80px 24px;
+    background:transparent;
+    color: #26352b;
+}
+
+/* SHARED */
+.section-label {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #1f5f2e;
+    color: white;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.about-section {
+    max-width: 1200px;
+    margin: 70px auto;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 35px;
+}
+
+.section-heading h2 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    color: #166a7a;
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: #3c4c42;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.about-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    background: #2f7d32;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.3s ease;
+}
+
+.about-btn:hover {
+    background: #166a7a;
+    transform: translateY(-3px);
+}
+
+/* WELCOME CARD */
+.welcome-card {
+    max-width: 1200px;
+    margin: 0 auto 70px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 35px;
+    align-items: center;
+    padding: 40px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.welcome-text h1 {
+    font-size: clamp(2.4rem, 5vw, 4.8rem);
+    color: #166a7a;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.welcome-text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #344238;
+    max-width: 650px;
+}
+
+.welcome-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
+/* BLOG PREVIEW */
+.blog-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.preview-card {
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.preview-card span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #2f7d32;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.preview-card h3 {
+    color: #166a7a;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.preview-card p {
+    color: #3d4c42;
+    line-height: 1.7;
+}
+
+.preview-card a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #2f7d32;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* GALLERY SLIDER */
+.gallery-preview-section {
+    overflow: hidden;
+}
+
+.gallery-slider {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0 25px;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 22px;
+    width: max-content;
+    animation: galleryScroll 30s linear infinite;
+}
+
+.gallery-track img {
+    width: 260px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 24px;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 8%,
+        black 92%,
+        transparent
+    );
+    
+}
+
+.gallery-slider:hover .gallery-track {
+    animation-play-state: ;
+}
+
+@keyframes galleryScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.center-btn {
+    text-align: center;
+}
+
+/* SHOP PREVIEW */
+.shop-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.shop-card {
+    padding: 18px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: 0.3s ease;
+}
+
+.shop-card:hover {
+    transform: translateY(-6px);
+}
+
+.shop-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 16px;
+}
+
+.shop-card h3 {
+    color: #166a7a;
+    margin-bottom: 8px;
+}
+
+.shop-card p {
+    color: #2f7d32;
+    font-weight: 900;
+    margin-bottom: 14px;
+}
+
+.shop-card a {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #166a7a;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+/* SHOP CATEGORY SCROLL BAR */
+.shop-category-bar {
+     width: 100%;
+    margin: 70px auto;
+    overflow: hidden;
+    padding: 18px 0;
+    background: transparent;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 8%,
+        black 92%,
+        transparent
+    );
+}
+
+.category-track {
+    display: flex;
+    gap: 18px;
+    width: max-content;
+    padding-left: 28px;
+    padding-right: 28px;
+    animation: categoryScroll 22s linear infinite;
+}
+
+.category-track span {
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: white;
+    color: #1f5f2e;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.shop-category-bar:hover .category-track {
+    animation-play-state: ;
+}
+
+@keyframes categoryScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 14px));
+    }
+}
+
+/* ABOUT BARTO CARD */
+.about-barto-card {
+    max-width: 950px;
+    margin: 70px auto 0;
+    padding: 45px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.about-barto-card h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: #166a7a;
+    margin-bottom: 22px;
+}
+
+.about-barto-card p {
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: #344238;
+    margin-bottom: 18px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .welcome-card {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-preview-grid,
+    .shop-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .welcome-image img {
+        height: 340px;
+    }
+}
+
+/* ARTIST STORY SECTION */
+.about-hero {
+    max-width: 1200px;
+    margin: 80px auto 0;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 28px;
+    padding: 34px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.intro-card {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 34px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.intro-image {
+    height: 420px;
+}
+
+.card-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+.intro-text h2,
+.split-text h2 {
+    color: #166a7a;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 18px;
+}
+
+.intro-text p,
+.split-text p {
+    color: #344238;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.about-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.split-card {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 34px;
+    align-items: center;
+}
+
+.reverse-card {
+    grid-template-columns: 1.1fr 0.9fr;
+}
+
+.reverse-card .split-image {
+    order: 2;
+}
+
+.reverse-card .split-text {
+    order: 1;
+}
+
+.split-image img {
+    height: 380px;
+}
+
+.quote {
+    margin-top: 22px;
+    padding: 22px;
+    border-left: 6px solid #2f7d32;
+    background: #f0fff0;
+    border-radius: 18px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #166a7a;
+}
+
+.quote span {
+    display: inline-block;
+    margin-top: 8px;
+    color: #2f7d32;
+    font-size: 0.95rem;
+}
+
+/* COMMISSION CTA SECTION */
+.about-commission-section {
+    max-width: 1100px;
+    margin: 80px auto 0;
+}
+
+.commission-cta-card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 55px 35px;
+    border-radius: 30px;
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.55), transparent 35%),
+        linear-gradient(135deg, #1f5f2e, #2f7d32, #166a7a);
+    color: white;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.18);
+}
+
+.commission-cta-card::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+    top: -90px;
+    left: -70px;
+}
+
+.commission-cta-card::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 50%;
+    bottom: -120px;
+    right: -80px;
+}
+
+.commission-cta-card .section-label,
+.commission-cta-card h2,
+.commission-cta-card p,
+.commission-cta-actions {
+    position: relative;
+    z-index: 1;
+}
+
+.commission-cta-card .section-label {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1f5f2e;
+}
+
+.commission-cta-card h2 {
+    font-size: clamp(2rem, 4vw, 3.7rem);
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.commission-cta-card p {
+    max-width: 760px;
+    margin: 0 auto 16px;
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.94);
+}
+
+.commission-cta-actions {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.about-secondary-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    background: white;
+    color: #1f5f2e;
+    text-decoration: none;
+    font-weight: 900;
+    transition: 0.3s ease;
+}
+
+.about-secondary-btn:hover {
+    background: #eaffea;
+    transform: translateY(-3px);
+}
+
+.commission-cta-card .about-btn {
+    background: #ffffff;
+    color: #166a7a;
+}
+
+.commission-cta-card .about-btn:hover {
+    background: #eaffea;
+    color: #1f5f2e;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .commission-cta-card {
+        padding: 38px 24px;
+        border-radius: 24px;
+    }
+
+    .commission-cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .commission-cta-actions a {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+}
+
+/* RESPONSIVE ARTIST STORY */
+@media (max-width: 900px) {
+    .intro-card,
+    .split-card,
+    .reverse-card {
+        grid-template-columns: 1fr;
+    }
+
+    .reverse-card .split-image,
+    .reverse-card .split-text {
+        order: initial;
+    }
+
+    .intro-image,
+    .split-image img {
+        height: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-card {
+        padding: 24px;
+        border-radius: 22px;
+    }
+
+    .intro-image,
+    .split-image img {
+        height: 260px;
+    }
+}
+
+@media (max-width: 650px) {
+    .about-page {
+        padding: 55px 16px;
+    }
+
+    .welcome-card,
+    .about-barto-card {
+        padding: 26px;
+        border-radius: 22px;
+    }
+
+    .blog-preview-grid,
+    .shop-preview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-track img {
+        width: 210px;
+        height: 260px;
+    }
+
+    .welcome-image img {
+        height: 280px;
+    }
+
+    .category-track span {
+        font-size: 0.85rem;
+    }
+}

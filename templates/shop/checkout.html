@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/checkout_flow.css' %}?v=4">
+{% endblock %}
+
+
+{% block content %}
+<section class="checkout-flow-page">
+    <h1>Checkout</h1>
+    <p>This is where the checkout form will go.</p>
+
+    <form method="POST" action="{% url 'success' %}">
+        {% csrf_token %}
+        <button type="submit">Place Order</button>
+    </form>
+</section>
+{% endblock %}

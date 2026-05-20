@@ -1,0 +1,123 @@
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.cart-item-image {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    background: white;
+}
+
+.checkout-flow-page {
+    min-height: 100vh;
+    padding: 140px 20px 90px;
+    background: transparent;
+    color: white;
+}
+
+.checkout-container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.checkout-hero {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.checkout-hero span {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 8px 18px;
+    border: 1px solid #333;
+    color: #dcdcdc;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.checkout-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.checkout-hero p {
+    color: #bdbdbd;
+    font-size: 1.05rem;
+}
+
+.flow-card {
+    background: #151515;
+    border: 1px solid #333;
+    padding: 28px;
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.flow-card:hover {
+    transform: translateY(-6px);
+    border-color: white;
+    background: #1c1c1c;
+}
+
+.flow-btn,
+.flow-link-btn {
+    display: inline-block;
+    border: none;
+    padding: 13px 22px;
+    background: white;
+    color: #111;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.flow-btn:hover,
+.flow-link-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+.flow-muted {
+    color: #bdbdbd;
+}
+
+.flow-total {
+    margin-top: 30px;
+    padding: 24px;
+    background: #151515;
+    border: 1px solid #333;
+    text-align: right;
+}
+
+.flow-total h2 {
+    margin-bottom: 18px;
+    font-size: 1.8rem;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 60px 25px;
+    background: #151515;
+    border: 1px solid #333;
+}
+
+@media (max-width: 650px) {
+    .cart-item {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item-image {
+        width: 100%;
+        height: 220px;
+    }
+}

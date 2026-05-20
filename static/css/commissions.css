@@ -1,116 +1,225 @@
 .commission-page {
     min-height: 100vh;
-    padding: 70px 45px;
-    background: rgb(50, 201, 50);
-    color: #fff;
+    padding: 80px 45px;
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.35), transparent 35%),
+        linear-gradient(135deg, #b9f7b0 0%, #43b047 45%, #16833a 100%);
+    color: #1f2f24;
 
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 70px;
+    grid-template-columns: 1.2fr 0.9fr;
+    gap: 55px;
     align-items: start;
-}
-
-.commission-info strong {
-    display: block;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.commission-info strong:nth-child(2) {
-    font-size: 1rem;
-    margin-bottom: 30px;
 }
 
 /* LEFT SIDE */
 .commission-info {
-    max-width: 700px;
-    text-align: center;
+    max-width: 780px;
+    width: 100%;
     margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.commission-info h2,
-.commission-info h3 {
-    font-size: 1.4rem;
+.commission-header-card,
+.info-card,
+.commission-form-box {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.commission-header-card {
+    text-align: center;
+}
+
+.commission-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: #e4ffe4;
+    color: #13762d;
+    font-size: 0.85rem;
+    font-weight: 800;
     letter-spacing: 1px;
-    margin-bottom: 22px;
     text-transform: uppercase;
 }
 
-.commission-info h3 {
-    margin-top: 32px;
+.commission-header-card h1 {
+    font-size: 2.6rem;
+    margin-bottom: 14px;
+    color: #12451f;
 }
 
-.commission-info p {
-    font-size: 1.05rem;
+.commission-header-card p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #3b4d40;
     line-height: 1.7;
+}
+
+.info-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    color: #12451f;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 14px;
+    color: #344238;
+}
+
+.info-card p:last-child {
+    margin-bottom: 0;
+}
+
+.info-card ul {
+    padding-left: 22px;
+    margin-bottom: 18px;
+}
+
+.info-card li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #344238;
+}
+
+.email-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #126c32;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+/* PRICE CARD */
+.price-list {
+    display: grid;
+    gap: 12px;
     margin-bottom: 20px;
 }
 
-/* RIGHT SIDE */
+.price-list div {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 14px 16px;
+    background: #f0fff0;
+    border-radius: 14px;
+    border: 1px solid #c8efc8;
+}
+
+.price-list strong {
+    color: #163f22;
+}
+
+.price-list span {
+    color: #0c7a35;
+    font-weight: 900;
+}
+
+/* RIGHT SIDE FORM */
 .commission-form-box {
-    max-width: 430px;
+    max-width: 470px;
     width: 100%;
     margin: 0 auto;
+    position: sticky;
+    top: 25px;
 }
 
 .commission-form-box h2 {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    color: #12451f;
 }
 
 .form-intro {
     text-align: center;
-    margin-bottom: 35px;
-    color: #f2f2f2;
+    margin-bottom: 32px;
+    color: #4a5d4f;
 }
 
 .commission-form-box form {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 15px;
 }
 
 .commission-form-box input,
 .commission-form-box textarea {
     width: 100%;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid #d7e4d8;
+    border-radius: 14px;
     padding: 14px 16px;
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     font-family: inherit;
+    background: #fbfffb;
+    color: #243027;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.commission-form-box input:focus,
+.commission-form-box textarea:focus {
+    border-color: #35a852;
+    box-shadow: 0 0 0 4px rgba(53, 168, 82, 0.16);
 }
 
 .commission-form-box textarea {
-    min-height: 90px;
+    min-height: 105px;
     resize: vertical;
 }
 
 .commission-form-box label {
     font-size: 0.95rem;
+    font-weight: 700;
+    color: #203b28;
     margin-top: 6px;
 }
 
 .checkbox-group,
-.radio-row {
+.radio-row,
+.radio-column {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 14px;
+    background: #f4fff4;
+    border-radius: 16px;
+    border: 1px solid #d7efd7;
 }
 
 .checkbox-group label,
-.radio-row label {
+.radio-row label,
+.radio-column label,
+.terms-box label {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-weight: 600;
 }
 
 .checkbox-group input,
-.radio-row input {
+.radio-row input,
+.radio-column input,
+.terms-box input {
     width: auto;
+    accent-color: #229d45;
 }
 
 .radio-row {
@@ -125,78 +234,68 @@
 }
 
 .commission-form-box input[type="file"] {
-    background: #fff;
+    background: #fbfffb;
     color: #333;
-    border: 2px dashed #cfcfcf;
+    border: 2px dashed #9bd89b;
     padding: 24px;
-}
-
-.commission-form-box button {
-    margin-top: 12px;
-    padding: 14px 18px;
-    border: none;
-    border-radius: 5px;
-    background: #57fab9;
-    color: #073b32;
-    font-weight: 800;
-    text-transform: uppercase;
     cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.commission-form-box button:hover {
-    background: #ffffff;
-    transform: translateY(-3px);
-}
-
-
-.radio-column {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.radio-column label,
-.terms-box label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.radio-column input,
-.terms-box input {
-    width: auto;
 }
 
 .small-note {
     font-size: 0.85rem;
-    opacity: 0.9;
+    color: #5e735f;
+    font-weight: 500;
 }
 
 .terms-box {
     margin-top: 8px;
+    padding: 18px;
+    background: #eefdee;
+    border-radius: 18px;
+    border: 1px solid #cdeccd;
 }
 
 .terms-box p {
-    margin-bottom: 10px;
-    line-height: 1.5;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #344238;
 }
 
+.commission-form-box button {
+    margin-top: 12px;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 999px;
+    background: #1f9d45;
+    color: #ffffff;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 20px rgba(31, 157, 69, 0.28);
+}
+
+.commission-form-box button:hover {
+    background: #106b2e;
+    transform: translateY(-3px);
+}
 
 /* RESPONSIVE */
-@media (max-width: 950px) {
+@media (max-width: 1050px) {
     .commission-page {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 40px;
         padding: 60px 25px;
     }
 
     .commission-info {
-        max-width: 750px;
+        max-width: 850px;
     }
 
     .commission-form-box {
-        max-width: 600px;
+        max-width: 650px;
+        position: static;
     }
 }
 
@@ -205,17 +304,28 @@
         padding: 45px 18px;
     }
 
-    .commission-info h2,
-    .commission-info h3 {
-        font-size: 1.15rem;
+    .commission-header-card,
+    .info-card,
+    .commission-form-box {
+        padding: 24px;
+        border-radius: 20px;
     }
 
-    .commission-info p {
+    .commission-header-card h1 {
+        font-size: 2rem;
+    }
+
+    .info-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .info-card p,
+    .info-card li {
         font-size: 0.95rem;
     }
 
     .commission-form-box h2 {
-        font-size: 1.5rem;
+        font-size: 1.55rem;
     }
 
     .radio-row {
@@ -225,5 +335,10 @@
 
     .date-row {
         grid-template-columns: 1fr;
+    }
+
+    .price-list div {
+        flex-direction: column;
+        gap: 5px;
     }
 }

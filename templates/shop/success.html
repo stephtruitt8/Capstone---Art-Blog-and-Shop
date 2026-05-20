@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Success{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/checkout_flow.css' %}?v=4">
+{% endblock %}
+
+{% block content %}
+<section class="checkout-flow-page">
+    <h1>Thank you for your purchase!</h1>
+    <p>Your order has been received.</p>
+
+    <a href="{% url 'shop' %}">Back to Shop</a>
+</section>
+{% endblock %}

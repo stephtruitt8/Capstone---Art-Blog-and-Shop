@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Cart{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/checkout_flow.css' %}?v=4">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="checkout-flow-page">
+    <h1>Your Cart</h1>
+
+    {% if cart_items %}
+        <div class="cart-list">
+            {% for item in cart_items %}
+                <div class="cart-item">
+                    {% if item.product.image %}
+                        <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}" class="cart-item-image">>
+                    {% endif %}
+
+                    <div>
+                        <h2>{{ item.product.title }}</h2>
+                        <p>Quantity: {{ item.quantity }}</p>
+                        <p>Subtotal: ${{ item.subtotal|floatformat:"2" }}</p>
+
+                        <a href="{% url 'remove_from_cart' item.product.id %}">
+                            Remove
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2>Total: ${{ total|floatformat:"2" }}</h2>
+
+        <a href="{% url 'checkout' %}">
+            <button>Checkout</button>
+        </a>
+    {% else %}
+        <p>Your cart is empty.</p>
+        <a href="{% url 'shop' %}">Back to Shop</a>
+    {% endif %}
+</section>
+
+{% endblock %}

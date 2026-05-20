@@ -2,29 +2,84 @@
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/shop.css' %}">
+<link rel="stylesheet" href="{% static 'css/shop.css' %}?v=10">
 {% endblock %}
 
 {% block title %}Shop{% endblock %}
 
 {% block content %}
 
-    <div class="list">
+<section class="catalog">
+    <div class="shop-hero">
+        <span>BartoArts Shop</span>
+        <h1>Shop BartoArts</h1>
+        <p>Browse prints, products, and creative goods from the BartoArts collection.</p>
+    </div>
+
+    <form method="GET" class="shop-search">
+        <input type="text" name="q" placeholder="Search the shop..." value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <div class="shop-categories">
+    <a href="{% url 'shop' %}" class="{% if not selected_category %}active{% endif %}">
+        All
+    </a>
+
+    {% for category in categories %}
+        <a href="?category={{ category.slug }}{% if query %}&q={{ query }}{% endif %}"
+           class="{% if selected_category == category.slug %}active{% endif %}">
+            {{ category.name }}
+        </a>
+    {% endfor %}
+    </div>
+
+    <a href="{% url 'cart_detail' %}" class="cart-card-link">
+        <div class="cart-card">
+            <div class="cart-icon">🛒</div>
+
+            <div class="cart-card-text">
+                <h2>View Your Cart</h2>
+                <p>Review your items, remove products, and continue to checkout.</p>
+            </div>
+
+            <span class="cart-arrow">→</span>
+        </div>
+    </a>
+    
+    <div class="product-grid">
         {% for prod in product_list %}
             <div class="product-card">
+
                 {% if prod.image %}
                     <img src="{{ prod.image.url }}" alt="{{ prod.title }}" class="product-image">
                 {% else %}
                     <div class="product-image placeholder">Image Coming Soon</div>
-                {% endif %}            
-                
-                <h2>{{ prod.title }}</h2>
-                <label class="price">${{ prod.price|floatformat:"2" }}</label>
-                <label class="stock">Stock: {{ prod.stock }}</label>
-            
-            </div>
-        {% endfor %}
+                {% endif %}
 
+                <div class="product-info">
+                    <a href="{% url 'product_detail' prod.pk %}">
+                        <h2>{{ prod.title }}</h2>
+                    </a>
+
+                    <p class="price">${{ prod.price|floatformat:"2" }}</p>
+                    <p class="stock">Stock: {{ prod.stock }}</p>
+
+                    {% if prod.stock > 0 %}
+                        <form method="POST" action="{% url 'add_to_cart' prod.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="cart-btn">Add to Cart</button>
+                        </form>
+                    {% else %}
+                        <button class="cart-btn sold-out" disabled>Sold Out</button>
+                    {% endif %}
+                </div>
+
+            </div>
+        {% empty %}
+            <p class="no-products">No products found.</p>
+        {% endfor %}
     </div>
+</section>
 
 {% endblock %}

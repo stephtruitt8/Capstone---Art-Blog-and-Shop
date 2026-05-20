@@ -5,25 +5,34 @@
 {% block title %}Gallery{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css' %}?v=9">
 {% endblock %}
 
 {% block content %}
 
 <section class="gallery-page">
-    <div class="gallery-hero">
-        <span class="gallery-label">BartoArts Gallery</span>
 
-        <h1>Choose Your Creative Path</h1>
+    <div class="gallery-slideshow-hero">
+        <div class="gallery-slide slide-one"></div>
+        <div class="gallery-slide slide-two"></div>
+        <div class="gallery-slide slide-three"></div>
+        <div class="gallery-slide slide-four"></div>
+        <div class="gallery-slide slide-five"></div>
 
-        <p>
-            Explore the gallery by category. Visit illustrations for finished artwork,
-            sketches for raw ideas, and story art for pieces built around characters,
-            scenes, and visual storytelling.
-        </p>
+        <div class="gallery-slideshow-content">
+            <span class="gallery-label">BartoArts Gallery</span>
 
-        <small class="gallery-note">Select a section below to begin exploring.</small>
+            <h1>Explore the Creative Archive</h1>
+
+            <p>
+                Browse illustrations, sketches, and story art from the BartoArts collection.
+                Each section opens a different side of the creative process.
+            </p>
+
+            <small class="gallery-note">Select a section below to begin exploring.</small>
+        </div>
     </div>
+
 
     <div class="gallery-categories">
 
@@ -46,7 +55,7 @@
         </a>
 
         <a href="{% url 'story_art' %}" class="gallery-category-card image-bottom">
-            <img src="{% static 'img/images/story1.png' %}" alt="Story Art" class="gallery-category-image">
+            <img src="{% static 'img/images/story14.png' %}" alt="Story Art" class="gallery-category-image">
             <div class="gallery-card-overlay">
                 <span class="category-number">03</span>
                 <h2>Story Art</h2>
@@ -57,3 +66,4 @@
 </section>
 
 {% endblock %}
+
