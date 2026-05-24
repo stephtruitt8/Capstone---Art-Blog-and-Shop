@@ -4,7 +4,7 @@
 {% block title %}About BartoArts{% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/about.css' %}?v=6.0">
+<link rel="stylesheet" href="{% static 'css/about.css' %}?v=8.0">
 {% endblock %}
 
 {% block content %}
@@ -25,7 +25,7 @@
         </div>
 
         <div class="welcome-image">
-            <img src="{% static 'img/images/placeholder.jpg' %}" alt="BartoArts welcome image">
+            <img src="{% static 'img/images/illustration14.png' %}" alt="BartoArts welcome image">
         </div>
     </section>
 
@@ -41,6 +41,7 @@
         <div class="blog-preview-grid">
             <article class="preview-card">
                 <span>Blog Post</span>
+                <img src="{% static 'img/images/cross1.png' %}" alt="Blog post">
                 <h3>Studio Notes</h3>
                 <p>A quick update from the creative archive and current projects.</p>
                 <a href="{% url 'blog' %}">Read More</a>
@@ -48,6 +49,7 @@
 
             <article class="preview-card">
                 <span>Process</span>
+                <img src="{% static 'img/images/illustration23.png' %}" alt="Blog post">
                 <h3>Behind the Art</h3>
                 <p>A look into sketches, ideas, and how illustrations begin.</p>
                 <a href="{% url 'blog' %}">Read More</a>
@@ -55,6 +57,7 @@
 
             <article class="preview-card">
                 <span>Update</span>
+                <img src="{% static 'img/images/luci1.png' %}" alt="Blog post">
                 <h3>New Things Coming</h3>
                 <p>Shop drops, gallery additions, and future creative plans.</p>
                 <a href="{% url 'blog' %}">Read More</a>
@@ -73,18 +76,18 @@
 
         <div class="gallery-slider">
             <div class="gallery-track">
-                <img src="{% static 'img/images/gallery1.jpg' %}" alt="Gallery preview">
-                <img src="{% static 'img/images/gallery2.jpg' %}" alt="Gallery preview">
-                <img src="{% static 'img/images/gallery3.jpg' %}" alt="Gallery preview">
-                <img src="{% static 'img/images/gallery4.jpg' %}" alt="Gallery preview">
-                <img src="{% static 'img/images/gallery5.jpg' %}" alt="Gallery preview">
+                <img src="{% static 'img/images/illustration25.png' %}" alt="Gallery preview">
+                <img src="{% static 'img/images/illustration21.png' %}" alt="Gallery preview">
+                <img src="{% static 'img/images/illustration34.png' %}" alt="Gallery preview">
+                <img src="{% static 'img/images/illustration41.png' %}" alt="Gallery preview">
+                <img src="{% static 'img/images/illustration45.png' %}" alt="Gallery preview">
 
                 <!-- Duplicate images for smooth infinite scroll -->
-                <img src="{% static 'img/images/gallery1.jpg' %}" alt="Gallery preview">
-                <img src="{% static 'img/images/gallery2.jpg' %}" alt="Gallery preview">
-                <img src="{% static 'img/images/gallery3.jpg' %}" alt="Gallery preview">
-                <img src="{% static 'img/images/gallery4.jpg' %}" alt="Gallery preview">
-                <img src="{% static 'img/images/gallery5.jpg' %}" alt="Gallery preview">
+                <img src="{% static 'img/images/illustration25.png' %}" alt="Gallery preview">
+                <img src="{% static 'img/images/illustration21.png' %}" alt="Gallery preview">
+                <img src="{% static 'img/images/illustration34.png' %}" alt="Gallery preview">
+                <img src="{% static 'img/images/illustration41.png' %}" alt="Gallery preview">
+                <img src="{% static 'img/images/illustration45.png' %}" alt="Gallery preview">
             </div>
         </div>
 
@@ -104,28 +107,28 @@
 
         <div class="shop-preview-grid">
             <article class="shop-card">
-                <img src="{% static 'img/images/shop-placeholder1.jpg' %}" alt="Shop item">
+                <img src="{% static 'img/images/story19.png' %}" alt="Shop item">
                 <h3>Art Print</h3>
                 <p>$25.00</p>
                 <a href="{% url 'shop' %}">View Item</a>
             </article>
 
             <article class="shop-card">
-                <img src="{% static 'img/images/shop-placeholder2.jpg' %}" alt="Shop item">
+                <img src="{% static 'img/images/shirt1.jpg' %}" alt="Shop item">
                 <h3>Graphic Tee</h3>
                 <p>$35.00</p>
                 <a href="{% url 'shop' %}">View Item</a>
             </article>
 
             <article class="shop-card">
-                <img src="{% static 'img/images/shop-placeholder3.jpg' %}" alt="Shop item">
+                <img src="{% static 'img/images/stickerpack1.png' %}" alt="Shop item">
                 <h3>Sticker Pack</h3>
                 <p>$10.00</p>
                 <a href="{% url 'shop' %}">View Item</a>
             </article>
 
             <article class="shop-card">
-                <img src="{% static 'img/images/shop-placeholder4.jpg' %}" alt="Shop item">
+                <img src="{% static 'img/images/case1.png' %}" alt="Shop item">
                 <h3>Phone Case</h3>
                 <p>$22.00</p>
                 <a href="{% url 'shop' %}">View Item</a>
