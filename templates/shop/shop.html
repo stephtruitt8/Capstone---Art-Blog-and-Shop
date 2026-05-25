@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/shop.css' %}?v=10">
+<link rel="stylesheet" href="{% static 'css/shop.css' %}?v=11">
 {% endblock %}
 
 {% block title %}Shop{% endblock %}
@@ -27,8 +27,8 @@
     </a>
 
     {% for category in categories %}
-        <a href="?category={{ category.slug }}{% if query %}&q={{ query }}{% endif %}"
-           class="{% if selected_category == category.slug %}active{% endif %}">
+        <a href="{% url 'shop' %}?category={{ category.slug }}{% if query %}&q={{ query }}{% endif %}"
+        class="{% if selected_category == category.slug %}active{% endif %}">
             {{ category.name }}
         </a>
     {% endfor %}
@@ -40,14 +40,23 @@
 
             <div class="cart-card-text">
                 <h2>View Your Cart</h2>
-                <p>Review your items, remove products, and continue to checkout.</p>
+                <p>
+                    Review your items, remove products, and continue to checkout.
+                    {% if request.session.cart %}
+                    <strong>{{ request.session.cart|length }} item(s) currently in cart.</strong>
+                    {% else %}
+                    <strong>Your cart is empty.</strong>
+                    {% endif %}
+                </p>
             </div>
+
+
 
             <span class="cart-arrow">→</span>
         </div>
     </a>
     
-    <div class="product-grid">
+        <div class="product-grid">
         {% for prod in product_list %}
             <div class="product-card">
 
@@ -73,13 +82,99 @@
                     {% else %}
                         <button class="cart-btn sold-out" disabled>Sold Out</button>
                     {% endif %}
-                </div>
 
+                    <button type="button" class="preview-btn" onclick="openPreview('preview-{{ prod.id }}')">
+                        Preview
+                    </button>
+                </div>
             </div>
-        {% empty %}
-            <p class="no-products">No products found.</p>
-        {% endfor %}
-    </div>
+
+            <!-- Preview Popup -->
+            <div class="preview-modal" id="preview-{{ prod.id }}">
+                <div class="preview-box">
+                    <button type="button" class="preview-close" onclick="closePreview('preview-{{ prod.id }}')">
+                        ×
+                    </button>
+
+                    <div class="preview-image-wrap">
+                        {% if prod.image %}
+                            <img src="{{ prod.image.url }}" alt="{{ prod.title }}">
+                        {% else %}
+                            <div class="preview-placeholder">Image Coming Soon</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="preview-content">
+                        <span class="preview-label">BartoArts Preview</span>
+
+                        <h2>{{ prod.title }}</h2>
+
+                        <p class="preview-price">${{ prod.price|floatformat:"2" }}</p>
+                        <p class="preview-stock">Stock: {{ prod.stock }}</p>
+
+                        <p class="preview-description">
+                            {{ prod.description|default:"No description available yet." }}
+                        </p>
+
+                        <div class="preview-actions">
+                            <a href="{% url 'product_detail' prod.pk %}" class="preview-detail-btn">
+                                View Details
+                            </a>
+
+                            {% if prod.stock > 0 %}
+                                <form method="POST" action="{% url 'add_to_cart' prod.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="preview-cart-btn">Add to Cart</button>
+                                </form>
+                            {% else %}
+                                <button class="preview-cart-btn sold-out" disabled>Sold Out</button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% empty %}
+                <p class="no-products">No products found.</p>
+            {% endfor %}
+        </div>
 </section>
+
+    <script>
+        function openPreview(id) {
+            const modal = document.getElementById(id);
+
+            if (modal) {
+                modal.classList.add("active");
+                document.body.style.overflow = "hidden";
+            }
+        }
+
+        function closePreview(id) {
+            const modal = document.getElementById(id);
+
+            if (modal) {
+                modal.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+        }
+
+        document.addEventListener("click", function(event) {
+            if (event.target.classList.contains("preview-modal")) {
+                event.target.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                document.querySelectorAll(".preview-modal.active").forEach(function(modal) {
+                    modal.classList.remove("active");
+                });
+
+                document.body.style.overflow = "";
+            }
+        });
+    </script>
 
 {% endblock %}

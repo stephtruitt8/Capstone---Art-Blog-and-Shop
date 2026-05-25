@@ -4,14 +4,36 @@
 {% block title %}Success{% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/checkout_flow.css' %}?v=4">
+<link rel="stylesheet" href="{% static 'css/checkout_flow.css' %}?v=6">
 {% endblock %}
 
 {% block content %}
-<section class="checkout-flow-page">
-    <h1>Thank you for your purchase!</h1>
-    <p>Your order has been received.</p>
 
-    <a href="{% url 'shop' %}">Back to Shop</a>
+<section class="checkout-flow-page">
+    <div class="checkout-container">
+
+        <div class="checkout-hero">
+            <span>BartoArts Order</span>
+            <h1>Thank You!</h1>
+            <p>Your order has been received.</p>
+        </div>
+
+        <div class="flow-card success-card">
+            <div class="success-icon">✓</div>
+
+            <h2>Purchase Complete</h2>
+
+            <p class="flow-muted">
+                Thank you for supporting BartoArts. Your order request has been received,
+                and your cart has been cleared.
+            </p>
+
+            <a href="{% url 'shop' %}" class="flow-link-btn">
+                Back to Shop
+            </a>
+        </div>
+
+    </div>
 </section>
+
 {% endblock %}

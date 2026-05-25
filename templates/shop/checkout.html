@@ -1,21 +1,45 @@
+Replace your checkout page with this:
+
 {% extends 'base.html' %}
 {% load static %}
 
 {% block title %}Checkout{% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/checkout_flow.css' %}?v=4">
+<link rel="stylesheet" href="{% static 'css/checkout_flow.css' %}?v=6">
 {% endblock %}
 
-
 {% block content %}
-<section class="checkout-flow-page">
-    <h1>Checkout</h1>
-    <p>This is where the checkout form will go.</p>
 
-    <form method="POST" action="{% url 'success' %}">
-        {% csrf_token %}
-        <button type="submit">Place Order</button>
-    </form>
+<section class="checkout-flow-page">
+    <div class="checkout-container">
+
+        <div class="checkout-hero">
+            <span>BartoArts Checkout</span>
+            <h1>Checkout</h1>
+            <p>Confirm your order and place your request.</p>
+        </div>
+
+        <div class="flow-card">
+            <h2>Order Summary</h2>
+            <p class="flow-muted">
+                This is where the checkout form or payment details will go.
+            </p>
+
+            <form method="POST" action="{% url 'success' %}" class="checkout-form">
+                {% csrf_token %}
+
+                <button type="submit" class="flow-btn">
+                    Place Order
+                </button>
+
+                <a href="{% url 'cart_detail' %}" class="flow-link-btn secondary-flow-btn">
+                    Back to Cart
+                </a>
+            </form>
+        </div>
+
+    </div>
 </section>
+
 {% endblock %}

@@ -52,6 +52,14 @@
     font-size: 1.05rem;
 }
 
+.checkout-form {
+    margin-top: 24px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .flow-card {
     background: #151515;
     border: 1px solid #333;
@@ -109,6 +117,224 @@
     padding: 60px 25px;
     background: #151515;
     border: 1px solid #333;
+}
+
+.secondary-flow-btn {
+    margin-top: 12px;
+    background: transparent;
+    color: white;
+    border: 1px solid #444;
+}
+
+.secondary-flow-btn:hover {
+    background: white;
+    color: #111;
+}
+
+/* =========================
+   PRODUCT DETAIL PAGE
+========================= */
+
+.product-detail-card {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.product-detail-image {
+    width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    display: block;
+    background: #fff;
+    padding: 16px;
+}
+
+.product-detail-info h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.product-detail-price {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.product-detail-description {
+    line-height: 1.7;
+    margin: 22px 0;
+}
+
+.secondary-flow-btn {
+    margin-top: 14px;
+    background: transparent;
+    color: white;
+    border: 1px solid #444;
+}
+
+.secondary-flow-btn:hover {
+    background: white;
+    color: #111;
+}
+
+.sold-out {
+    background: #444;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.sold-out:hover {
+    transform: none;
+    opacity: 1;
+}
+
+/* =========================
+   PRODUCT PREVIEW MODAL
+========================= */
+
+.preview-btn {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #444;
+    padding: 12px 20px;
+    background: transparent;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.preview-btn:hover {
+    transform: translateY(-3px);
+    background: white;
+    color: #111;
+}
+
+.preview-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-modal.active {
+    display: flex;
+}
+
+.preview-box {
+    position: relative;
+    width: min(950px, 95vw);
+    max-height: 90vh;
+    background: #111;
+    border: 1px solid #444;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.6);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+
+.preview-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    z-index: 3;
+
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+    color: #111;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.preview-image-wrap {
+    min-height: 520px;
+    background: #222;
+}
+
+.preview-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================
+   SUCCESS PAGE
+========================= */
+
+.success-card {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 22px;
+
+    border-radius: 50%;
+    background: white;
+    color: #111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2.4rem;
+    font-weight: 900;
+}
+
+.success-card h2 {
+    font-size: 2rem;
+    margin-bottom: 14px;
+}
+
+.success-card p {
+    max-width: 520px;
+    margin: 0 auto 26px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+    .product-detail-card {
+        grid-template-columns: 1fr;
+    }
+
+    .product-detail-image {
+        height: 340px;
+    }
+
+    .preview-box {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+    }
+
+    .preview-image-wrap {
+        min-height: 300px;
+    }
 }
 
 @media (max-width: 650px) {

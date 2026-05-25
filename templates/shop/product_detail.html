@@ -3,29 +3,61 @@
 
 {% block title %}{{ product.title }}{% endblock %}
 
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/checkout_flow.css' %}?v=3">
+{% endblock %}
+
 {% block content %}
 
-<section class="product-detail">
-    {% if product.image %}
-        <img src="{{ product.image.url }}" alt="{{ product.title }}">
-    {% endif %}
+<section class="checkout-flow-page">
+    <div class="checkout-container">
 
-    <h1>{{ product.title }}</h1>
-    <p>${{ product.price|floatformat:"2" }}</p>
-    <p>Stock: {{ product.stock }}</p>
+        <div class="checkout-hero">
+            <span>BartoArts Product</span>
+            <h1>{{ product.title }}</h1>
+            <p>View item details, stock, and add it to your cart.</p>
+        </div>
 
-    {% if product.description %}
-        <p>{{ product.description }}</p>
-    {% endif %}
+        <div class="flow-card product-detail-card">
 
-    {% if product.stock > 0 %}
-        <form method="POST" action="{% url 'add_to_cart' product.id %}">
-            {% csrf_token %}
-            <button type="submit">Add to Cart</button>
-        </form>
-    {% else %}
-        <button disabled>Sold Out</button>
-    {% endif %}
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.title }}" class="product-detail-image">
+            {% endif %}
+
+            <div class="product-detail-info">
+                <h2>{{ product.title }}</h2>
+
+                <p class="product-detail-price">
+                    ${{ product.price|floatformat:"2" }}
+                </p>
+
+                <p class="flow-muted">
+                    Stock: {{ product.stock }}
+                </p>
+
+                {% if product.description %}
+                    <p class="flow-muted product-detail-description">
+                        {{ product.description }}
+                    </p>
+                {% endif %}
+
+                {% if product.stock > 0 %}
+                    <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                        {% csrf_token %}
+                        <button type="submit" class="flow-btn">Add to Cart</button>
+                    </form>
+                {% else %}
+                    <button class="flow-btn sold-out" disabled>Sold Out</button>
+                {% endif %}
+
+                <a href="{% url 'shop' %}" class="flow-link-btn secondary-flow-btn">
+                    Back to Shop
+                </a>
+            </div>
+
+        </div>
+
+    </div>
 </section>
 
 {% endblock %}

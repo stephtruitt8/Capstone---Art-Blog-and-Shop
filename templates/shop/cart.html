@@ -4,45 +4,63 @@
 {% block title %}Cart{% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/checkout_flow.css' %}?v=4">
+<link rel="stylesheet" href="{% static 'css/checkout_flow.css' %}?v=6">
 {% endblock %}
-
 
 {% block content %}
 
 <section class="checkout-flow-page">
-    <h1>Your Cart</h1>
+    <div class="checkout-container">
 
-    {% if cart_items %}
-        <div class="cart-list">
-            {% for item in cart_items %}
-                <div class="cart-item">
-                    {% if item.product.image %}
-                        <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}" class="cart-item-image">>
-                    {% endif %}
-
-                    <div>
-                        <h2>{{ item.product.title }}</h2>
-                        <p>Quantity: {{ item.quantity }}</p>
-                        <p>Subtotal: ${{ item.subtotal|floatformat:"2" }}</p>
-
-                        <a href="{% url 'remove_from_cart' item.product.id %}">
-                            Remove
-                        </a>
-                    </div>
-                </div>
-            {% endfor %}
+        <div class="checkout-hero">
+            <span>BartoArts Cart</span>
+            <h1>Your Cart</h1>
+            <p>Review your items before checkout.</p>
         </div>
 
-        <h2>Total: ${{ total|floatformat:"2" }}</h2>
+        {% if cart_items %}
+            <div class="cart-list">
+                {% for item in cart_items %}
+                    <div class="flow-card cart-item">
 
-        <a href="{% url 'checkout' %}">
-            <button>Checkout</button>
-        </a>
-    {% else %}
-        <p>Your cart is empty.</p>
-        <a href="{% url 'shop' %}">Back to Shop</a>
-    {% endif %}
+                        {% if item.product.image %}
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}" class="cart-item-image">
+                        {% endif %}
+
+                        <div>
+                            <h2>{{ item.product.title }}</h2>
+                            <p class="flow-muted">Quantity: {{ item.quantity }}</p>
+                            <p class="flow-muted">Subtotal: ${{ item.subtotal|floatformat:"2" }}</p>
+
+                            <a href="{% url 'remove_from_cart' item.product.id %}" class="flow-link-btn secondary-flow-btn">
+                                Remove
+                            </a>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="flow-total">
+                <h2>Total: ${{ total|floatformat:"2" }}</h2>
+
+                <a href="{% url 'checkout' %}" class="flow-link-btn">
+                    Checkout
+                </a>
+            </div>
+
+        {% else %}
+            <div class="empty-cart">
+                <h2>Your cart is empty.</h2>
+                <p class="flow-muted">Add some products from the shop.</p>
+
+                <a href="{% url 'shop' %}" class="flow-link-btn">
+                    Back to Shop
+                </a>
+            </div>
+        {% endif %}
+
+    </div>
 </section>
 
 {% endblock %}

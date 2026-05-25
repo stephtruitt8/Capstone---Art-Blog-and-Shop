@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}?v=4">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}?v=6">
 {% endblock %}
 
 {% block title %}Blog{% endblock %}
@@ -43,6 +43,10 @@
                             a conversation, a song, a sketch, or even a quiet moment. Art does not
                             always begin with a perfect idea. Sometimes it begins with paying attention.
                         </p>
+
+                        <a href="{% url 'blog_detail' 'finding-inspiration' %}" class="full-post-btn">
+                            View Full Post
+                        </a>
                     </div>
                 </details>
             </div>
@@ -67,6 +71,10 @@
                             exploring, failing, and finding the shape of something new before it becomes
                             finished artwork.
                         </p>
+
+                        <a href="{% url 'blog_detail' 'behind-the-sketchbook' %}" class="full-post-btn">
+                            View Full Post
+                        </a>
                     </div>
                 </details>
             </div>
@@ -91,6 +99,10 @@
                             conflicts, emotions, and the feeling you want people to remember after
                             seeing the work.
                         </p>
+
+                        <a href="{% url 'blog_detail' 'building-a-creative-world' %}" class="full-post-btn">
+                            View Full Post
+                        </a>
                     </div>
                 </details>
             </div>
@@ -116,6 +128,10 @@
                             figured out right away. It simply means asking what you want the piece
                             to say, feel like, or become.
                         </p>
+
+                        <a href="{% url 'blog_detail' 'creating-with-purpose' %}" class="full-post-btn">
+                            View Full Post
+                        </a>
                     </div>
                 </details>
             </div>
@@ -140,6 +156,10 @@
                             Sometimes it means slowing down, clearing space, and giving yourself
                             permission to return to the work one step at a time.
                         </p>
+
+                        <a href="{% url 'blog_detail' 'staying-creative-when-life-gets-loud' %}" class="full-post-btn">
+                            View Full Post
+                        </a>
                     </div>
                 </details>
             </div>
@@ -164,6 +184,10 @@
                             to make things, learn from them, and keep moving. A finished imperfect
                             piece can teach more than an idea that never leaves your head.
                         </p>
+
+                        <a href="{% url 'blog_detail' 'letting-go-of-perfect-art' %}" class="full-post-btn">
+                            View Full Post
+                        </a>
                     </div>
                 </details>
             </div>
