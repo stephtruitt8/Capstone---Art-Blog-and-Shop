@@ -59,6 +59,116 @@
     transform: translateY(-3px);
 }
 
+.about-page {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cloud background layer for About page only */
+.about-clouds {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Cloud shape */
+.about-cloud {
+    position: absolute;
+    display: block;
+    width: 130px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25);
+    animation: aboutCloudFloat linear infinite;
+}
+
+/* Cloud puffs */
+.about-cloud::before,
+.about-cloud::after {
+    content: "";
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.about-cloud::before {
+    width: 60px;
+    height: 60px;
+    left: 18px;
+    top: -30px;
+}
+
+.about-cloud::after {
+    width: 75px;
+    height: 75px;
+    right: 16px;
+    top: -42px;
+}
+
+/* Different cloud positions/sizes */
+.cloud-1 {
+    top: 5%;
+    left: -180px;
+    transform: scale(0.9);
+    animation-duration: 55s;
+}
+
+.cloud-2 {
+    top: 18%;
+    left: -260px;
+    transform: scale(1.4);
+    animation-duration: 80s;
+    animation-delay: -20s;
+}
+
+.cloud-3 {
+    top: 36%;
+    left: -220px;
+    transform: scale(0.7);
+    animation-duration: 60s;
+    animation-delay: -35s;
+}
+
+.cloud-4 {
+    top: 54%;
+    left: -300px;
+    transform: scale(1.2);
+    animation-duration: 90s;
+    animation-delay: -45s;
+}
+
+.cloud-5 {
+    top: 72%;
+    left: -200px;
+    transform: scale(0.8);
+    animation-duration: 65s;
+    animation-delay: -15s;
+}
+
+.cloud-6 {
+    top: 88%;
+    left: -320px;
+    transform: scale(1.7);
+    opacity: 0.4;
+    animation-duration: 110s;
+    animation-delay: -60s;
+}
+
+/* Make clouds drift sideways */
+@keyframes aboutCloudFloat {
+    from {
+        translate: 0 0;
+    }
+
+    to {
+        translate: calc(100vw + 500px) 0;
+    }
+}
+
+
 /* WELCOME CARD */
 .welcome-card {
     max-width: 1200px;

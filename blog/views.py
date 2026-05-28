@@ -7,11 +7,15 @@ from django.shortcuts import render
 BLOG_POSTS = [
     {
         "slug": "finding-inspiration",
-        "title": "Finding Inspiration in Everyday Life",
+        "title": "How to Find Inspiration",
         "category": "Art",
-        "image": "img/images/project1.png",
+        "content": "",
+        "video_url": "https://youtu.be/cq3QBKbHUro?si=_zhd2rWjT13EAQrX",
         "preview": "A small reflection on how ordinary moments can turn into creative ideas.",
         "body": """
+
+Please watch this video for some random inspiration!
+
 Inspiration can come from places we do not always expect: a walk outside,
 a conversation, a song, a sketch, or even a quiet moment.
 

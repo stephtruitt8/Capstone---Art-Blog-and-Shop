@@ -1,21 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}About BartoArts{% endblock %}
+{% block title %}BartoArts{% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/about.css' %}?v=8.0">
+<link rel="stylesheet" href="{% static 'css/about.css' %}?v=9.0">
 {% endblock %}
 
 {% block content %}
 
 <section class="about-page">
 
+    <section class="about-page">
+
+    <div class="about-clouds" aria-hidden="true">
+        <span class="about-cloud cloud-1"></span>
+        <span class="about-cloud cloud-2"></span>
+        <span class="about-cloud cloud-3"></span>
+        <span class="about-cloud cloud-4"></span>
+        <span class="about-cloud cloud-5"></span>
+        <span class="about-cloud cloud-6"></span>
+    </div>
+
+
     <!-- WELCOME CARD -->
     <section class="welcome-card">
         <div class="welcome-text">
-            <span class="section-label">Welcome to BartoArts</span>
-            <h1>A creative space for art, stories, and imagination.</h1>
+            <span class="text-center section-label">Welcome to BartoArts</span>
+            <h1 class="text-center">A creative space for art, stories, and imagination.</h1>
             <p>
                 BartoArts is a home for illustrations, comics, story art, shop items,
                 blog updates, and creative ideas shaped by curiosity, culture, and imagination.
@@ -34,8 +46,8 @@
     <section class="about-section">
         <div class="section-heading">
             <span class="section-label">What’s New</span>
-            <h2>Latest from the Blog</h2>
-            <p>Recent thoughts, updates, sketches, behind-the-scenes notes, and creative reflections.</p>
+            <h2 class="text-white">Latest from the Blog</h2>
+            <p class="text-white">Recent thoughts, updates, sketches, behind-the-scenes notes, and creative reflections.</p>
         </div>
 
         <div class="blog-preview-grid">
@@ -70,8 +82,8 @@
     <section class="about-section gallery-preview-section">
         <div class="section-heading">
             <span class="section-label">Gallery Preview</span>
-            <h2>A Glimpse Into the Archive</h2>
-            <p>Preview illustrations, sketches, and story art from the BartoArts gallery.</p>
+            <h2 class="text-white">A Glimpse Into the Archive</h2>
+            <p class="text-white">Preview illustrations, sketches, and story art from the BartoArts gallery.</p>
         </div>
 
         <div class="gallery-slider">
@@ -101,15 +113,15 @@
     <section class="about-section">
         <div class="section-heading">
             <span class="section-label">Shop Preview</span>
-            <h2>Things from the Shop</h2>
-            <p>Browse prints, apparel, stickers, accessories, and creative goods from BartoArts.</p>
+            <h2 class="text-white">Oh my theres a Shop?</h2>
+            <p class="text-white">Browse prints, apparel, stickers, accessories, and creative goods from BartoArts.</p>
         </div>
 
         <div class="shop-preview-grid">
             <article class="shop-card">
                 <img src="{% static 'img/images/story19.png' %}" alt="Shop item">
                 <h3>Art Print</h3>
-                <p>$25.00</p>
+                <p>$10.00</p>
                 <a href="{% url 'shop' %}">View Item</a>
             </article>
 
@@ -123,7 +135,7 @@
             <article class="shop-card">
                 <img src="{% static 'img/images/stickerpack1.png' %}" alt="Shop item">
                 <h3>Sticker Pack</h3>
-                <p>$10.00</p>
+                <p>$20.00</p>
                 <a href="{% url 'shop' %}">View Item</a>
             </article>
 

@@ -350,6 +350,22 @@
     color: white;
 }
 
+/* Video */
+
+.video-wrapper {
+    max-width: 900px;
+    margin: 35px auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
